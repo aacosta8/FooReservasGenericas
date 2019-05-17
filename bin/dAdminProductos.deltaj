@@ -1,0 +1,15 @@
+delta dAdminProductos {
+	adds{
+		package com.eafit.reservasgenericas.fop;
+		
+		import java.util.ArrayList;
+		import java.util.List;
+		import com.eafit.reservasgenericas.dto.Producto;
+		import com.eafit.reservasgenericas.dto.ProductoDAO;
+		
+		public class AdminProductos{
+			ProductoDAO productoDAO = new ProductoDAO();
+			Producto producto = new Producto();
+		}
+	}
+}

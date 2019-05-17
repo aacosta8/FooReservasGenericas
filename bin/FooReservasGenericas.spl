@@ -1,0 +1,47 @@
+SPL FooReservasGenericas {
+
+	Features = 
+	{
+		AdminReservas, AgregarReserva, ModificarReserva, EliminarReserva, ListarReservas, Reserva, ReservaDAO,
+		AdminProductos, AgregarProducto, ModificarProducto, EliminarProducto, ListarProductos, Producto, ProductoDAO,
+		Conexion, Config
+	}
+
+	Deltas = 
+	{    
+		dAdminReservas, dAgregarReserva, dModificarReserva, dEliminarReserva, dListarReservas, dReserva, dReservaDAO,
+		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dProducto, dProductoDAO,
+		dConexion, dConfig	
+	} 
+ 
+	Constraints {
+		// Put boolean expression representation of the feature model here. 
+	}
+
+	Partitions {
+		// Put mapping between deltas and feature configurations here.
+		{dAdminReservas} when (AdminReservas);
+		{dAdminReservas, dReservaDAO, dAgregarReserva} when (AgregarReserva);
+		{dAdminReservas, dReservaDAO, dModificarReserva} when (ModificarReserva);
+		{dAdminReservas, dReservaDAO, dEliminarReserva} when (EliminarReserva);
+		{dAdminReservas, dReservaDAO, dListarReservas} when (ListarReservas);
+		{dReserva} when (Reserva);
+		{dReservaDAO} when (ReservaDAO);
+		  
+		{dAdminProductos} when (AdminProductos);
+		{dAdminProductos, dProductoDAO, dAgregarProducto} when (AgregarProducto);
+		{dAdminProductos, dProductoDAO, dModificarProducto} when (ModificarProducto);
+		{dAdminProductos, dProductoDAO, dEliminarProducto} when (EliminarProducto);
+		{dAdminProductos, dProductoDAO, dListarProductos} when (ListarProductos);
+		{dProducto} when (Producto);
+		{dProductoDAO} when (ProductoDAO);
+		
+		{dConexion} when (Conexion);
+		{dConfig} when (Config); 
+	} 
+ 
+	Products {
+		// Put product definitions here.
+		reservas_v10 = { AgregarProducto, Producto, ProductoDAO, Conexion, Config}; 
+	}   
+}  

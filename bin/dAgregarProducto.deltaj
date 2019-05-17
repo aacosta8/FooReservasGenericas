@@ -1,0 +1,30 @@
+delta dAgregarProducto {
+	modifies com.eafit.reservasgenericas.fop.AdminProductos{
+		adds public void agregar(String nombre, String descripcion) throws Exception {
+			Producto producto = new Producto();
+			producto.setNombre(nombre);
+			producto.setDescripcion(descripcion);
+			productoDAO.agregar(producto);
+		}
+	}
+	
+	modifies com.eafit.reservasgenericas.dto.ProductoDAO{
+		adds public void agregar(Producto producto){
+			try { 
+				conn = Conexion.getConexion();
+				String query = "INSERT INTO categoria (nombre, descripcion) values (?,?)";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, producto.getNombre()); ps.setString(2, producto.getDescripcion());
+				ps.executeUpdate();
+			}
+			catch(Exception e){ 
+				e.printStackTrace();
+			}
+			finally{
+				try { 
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}	
+		}
+	}
+}

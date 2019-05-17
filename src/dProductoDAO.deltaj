@@ -1,0 +1,21 @@
+delta dProductoDAO {
+	adds{
+		package com.eafit.reservasgenericas.dto;
+		
+		import java.sql.Connection;
+		import java.sql.PreparedStatement;
+		import java.sql.ResultSet;
+		import java.sql.Statement;
+		import java.util.ArrayList;
+		import java.util.List;
+		import com.eafit.reservasgenericas.bd.Conexion;
+		
+		public class ProductoDAO {
+			Statement st = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			Connection conn = null;
+			Conexion conexion = null;
+		}
+	}
+}
