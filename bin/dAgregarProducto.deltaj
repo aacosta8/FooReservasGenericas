@@ -12,9 +12,13 @@ delta dAgregarProducto {
 		adds public void agregar(Producto producto){
 			try { 
 				conn = Conexion.getConexion();
-				String query = "INSERT INTO categoria (nombre, descripcion) values (?,?)";
+				String query = "INSERT INTO producto (nombre, descripcion, precio, cantidadDisponible, tipo) values (?,?,?,?,?)";
 				ps = conn.prepareStatement(query);
-				ps.setString(1, producto.getNombre()); ps.setString(2, producto.getDescripcion());
+				ps.setString(1, producto.getNombre()); 
+				ps.setString(2, producto.getDescripcion());
+				ps.setFloat(3, producto.getPrecio());
+				ps.setInt(4, producto.getCantidadDisponible());
+				ps.setString(5, producto.getTipo());
 				ps.executeUpdate();
 			}
 			catch(Exception e){ 

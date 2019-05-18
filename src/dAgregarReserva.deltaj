@@ -1,2 +1,35 @@
 delta dAgregarReserva {
+		modifies com.eafit.reservasgenericas.fop.AdminReservas{
+		adds public void agregar(Date fechaReserva, Date fechaUso, int cantidad, float costoTotal, Cliente cliente, Producto producto){
+			Reserva reserva = new Reserva();
+			reserva.setFechaReserva(fechaReserva);
+			reserva.setFechaUso(fechaUso);
+			reserva.setCantidad(cantidad);
+			reserva.setCostoTotal(costoTotal);
+			reserva.setCliente(cliente);
+			reserva.setProducto(producto);
+			reservaDAO.agregar(reserva);
+		}
+	}
+	
+		modifies com.eafit.reservasgenericas.dto.ReservaDAO{
+		adds public void agregar(Reserva reserva){
+			try { 
+				conn = Conexion.getConexion();
+				String query = "INSERT INTO reservas (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
+				ps = conn.prepareStatement(query);
+//				ps.setString(1, producto.getNombre()); 
+
+				ps.executeUpdate();
+			}
+			catch(Exception e){ 
+				e.printStackTrace();
+			}
+			finally{
+				try { 
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}	
+		}
+	}
 }

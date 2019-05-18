@@ -7,28 +7,23 @@ import java.sql.Statement;
 import
 fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Producto;
-/*** added by dProductoDAO* modified by dAgregarProducto
+fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Reserva;
+/*** added by dReservaDAO* modified by dAgregarReserva
  */
-public class ProductoDAO {
+public class ReservaDAO {
 	Statement st = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 	Connection conn = null;
 	Conexion conexion = null;
-	/*** added by dAgregarProducto
+	/*** added by dAgregarReserva
 	 */
-	public void agregar(Producto producto) {
+	public void agregar(Reserva reserva) {
 		try {
 			conn = Conexion.getConexion();
 			String query =
-			"INSERT INTO producto (nombre, descripcion, precio, cantidadDisponible, tipo) values (?,?,?,?,?)";
+			"INSERT INTO reservas (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
 			ps = conn.prepareStatement(query);
-			ps.setString(1, producto.getNombre());
-			ps.setString(2, producto.getDescripcion());
-			ps.setFloat(3, producto.getPrecio());
-			ps.setInt(4, producto.getCantidadDisponible());
-			ps.setString(5, producto.getTipo());
 			ps.executeUpdate();
 		}
 		catch(Exception e) {

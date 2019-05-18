@@ -1,2 +1,20 @@
 delta dReservaDAO {
+	adds{
+		package com.eafit.reservasgenericas.dto;
+		
+		import java.sql.Connection;
+		import java.sql.PreparedStatement;
+		import java.sql.ResultSet;
+		import java.sql.Statement;
+		import com.eafit.reservasgenericas.bd.Conexion;
+		import com.eafit.reservasenericas.modelos.Reserva;
+		
+		public class ReservaDAO {
+			Statement st = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			Connection conn = null;
+			Conexion conexion = null;
+		}
+	}
 }

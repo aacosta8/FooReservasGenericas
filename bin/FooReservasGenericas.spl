@@ -15,11 +15,11 @@ SPL FooReservasGenericas {
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dConexion, dConfig	
 	} 
- 
+  
 	Constraints {
 		// Put boolean expression representation of the feature model here. 
 	}
-
+   
 	Partitions {
 		// Put mapping between deltas and feature configurations here.
 		{dAdminReservas} when (AdminReservas);
@@ -54,6 +54,7 @@ SPL FooReservasGenericas {
 		{ 
 			AgregarProducto, Producto, ProductoDAO, 
 			AgregarCliente, Cliente, ClienteDAO,
+			AgregarReserva, Reserva, ReservaDAO, 
 			Conexion, Config
 		}; 
 	} 

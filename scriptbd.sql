@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS reserva (
 	fechaReserva datetime NOT NULL, 
 	fechaUso datetime NOT NULL, 
 	cantidad int NOT NULL,
+    costoTotal float NOT NULL,
 	numeroIDCliente int(11),
     idProducto int(11),
 	PRIMARY KEY (idReserva),
@@ -30,8 +31,8 @@ CREATE TABLE IF NOT EXISTS reserva (
     FOREIGN KEY (idProducto) REFERENCES producto(idProducto)
 );
 
-drop table  reserva;
-drop table cliente;
-drop table producto;
+-- drop table  reserva;
+-- drop table cliente;
+-- drop table producto;
 
 

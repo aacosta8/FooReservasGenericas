@@ -1,2 +1,16 @@
 delta dAdminReservas {
+		adds{
+		package com.eafit.reservasgenericas.fop;
+		
+		import java.util.Date;
+		import com.eafit.reservasenericas.modelos.Cliente;
+		import com.eafit.reservasenericas.modelos.Producto;
+		import com.eafit.reservasenericas.modelos.Reserva;
+		import com.eafit.reservasgenericas.dto.ReservaDAO;
+		
+		public class AdminReservas{
+			ReservaDAO reservaDAO = new ReservaDAO();
+			Reserva reserva = new Reserva();
+		}
+	}
 }
