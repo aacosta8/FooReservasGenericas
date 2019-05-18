@@ -5,16 +5,16 @@ CREATE TABLE IF NOT EXISTS producto (
 id_producto bigint NOT NULL AUTO_INCREMENT, 
 nombre varchar(100) NOT NULL,
 descripcion varchar(200), 
-precio bigint NOT NULL,
+precio float(3) NOT NULL,
 cantidad_disponible bigint,
 tipo varchar(20),
 PRIMARY KEY (id_producto)
 );
 
 
-CREATE TABLE IF NOT EXISTS reservacion(
-id_reservacion bigint NOT NULL AUTO_INCREMENT, 
-fecha_reservacion datetime NOT NULL,
+CREATE TABLE IF NOT EXISTS reserva(
+id_reserva bigint NOT NULL AUTO_INCREMENT, 
+fecha_reserva datetime NOT NULL,
 fecha_uso datetime,
 cantidad int NOT NULL,
 costo_total bigint,

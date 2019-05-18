@@ -1,24 +1,24 @@
 delta dProducto {
 	adds{
-		package com.eafit.reservasgenericas.dto;
+		package com.eafit.reservasenericas.modelos;
 		
 		public class Producto {
 			
-			public Integer id;
-			public String nombre = "";
-			public String descripcion = "";
-			public int cantidadDisponible;
-			public String tipo = "";
-			public double costo;
+			private int idProducto;
+			private String nombre = "";
+			private String descripcion = "";
+			private float precio;
+			private int cantidadDisponible;
+			private String tipo = "";
 			
 			
-			public Integer getId() {
-		        return id;
+			public int getIdProducto() {
+		        return id_producto;
 		    }
 		
-		    public void setId(Integer id) throws Exception {
-		        if(id != null && id > 0){
-		            this.id = id;
+		    public void setIdProducto(int idProducto) throws Exception {
+		        if(idProducto != null && idProducto > 0){
+		            this.idProducto = idProducto;
 		        }else{
 		            throw new IllegalArgumentException();
 		        }
@@ -42,6 +42,43 @@ delta dProducto {
 		
 		    public void setDescripcion(String descripcion) {
 		        this.descripcion = descripcion;
+		    }
+
+		    public float getPrecio() {
+		        return precio;
+		    }
+		
+		    public void setPrecio(float precio) throws Exception {
+		        if(precio != null && precio > 0){
+		            this.precio = precio;
+		        }else{
+		            throw new IllegalArgumentException();
+		        }
+		    }
+
+
+			public int getCantidadDisponible() {
+		        return cantidadDisponible;
+		    }
+		
+		    public void setCantidadDisponible(int cantidadDisponible) throws Exception {
+		        if(cantidadDisponible != null){
+		            this.cantidadDisponible = cantidadDisponible;
+		        }else{
+		            throw new IllegalArgumentException();
+		        }
+		    }
+
+			public String getTipo() {
+		        return tipo;
+		    }
+		
+		    public void setTipo(String tipo) {
+		        if(tipo != null && tipo.length() >= 3){
+		            this.tipo = tipo;
+		        }else{
+		            throw new IllegalArgumentException();
+		        }
 		    }
 		}
 	}
