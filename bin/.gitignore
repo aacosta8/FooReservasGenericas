@@ -1,2 +1,7 @@
 /spls.xml
 /fooreservasgenericas/
+/dAdminClientes.deltaj
+/dAgregarCliente.deltaj
+/dBuscarCliente.deltaj
+/dCliente.deltaj
+/dClienteDAO.deltaj

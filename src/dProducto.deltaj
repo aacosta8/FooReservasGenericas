@@ -13,11 +13,11 @@ delta dProducto {
 			
 			
 			public int getIdProducto() {
-		        return id_producto;
+		        return idProducto;
 		    }
 		
 		    public void setIdProducto(int idProducto) throws Exception {
-		        if(idProducto != null && idProducto > 0){
+		        if(idProducto > 0){
 		            this.idProducto = idProducto;
 		        }else{
 		            throw new IllegalArgumentException();
@@ -49,7 +49,7 @@ delta dProducto {
 		    }
 		
 		    public void setPrecio(float precio) throws Exception {
-		        if(precio != null && precio > 0){
+		        if(precio > 0){
 		            this.precio = precio;
 		        }else{
 		            throw new IllegalArgumentException();
@@ -62,11 +62,7 @@ delta dProducto {
 		    }
 		
 		    public void setCantidadDisponible(int cantidadDisponible) throws Exception {
-		        if(cantidadDisponible != null){
-		            this.cantidadDisponible = cantidadDisponible;
-		        }else{
-		            throw new IllegalArgumentException();
-		        }
+	            this.cantidadDisponible = cantidadDisponible;
 		    }
 
 			public String getTipo() {

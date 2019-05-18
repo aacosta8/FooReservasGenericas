@@ -4,7 +4,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.general.Config;
+fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.configuracion.Config;
 /*** added by dConexion
  */
 public class Conexion {

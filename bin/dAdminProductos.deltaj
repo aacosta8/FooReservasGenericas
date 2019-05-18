@@ -4,7 +4,7 @@ delta dAdminProductos {
 		
 		import java.util.ArrayList;
 		import java.util.List;
-		import com.eafit.reservasgenericas.dto.Producto;
+		import com.eafit.reservasenericas.modelos.Producto;
 		import com.eafit.reservasgenericas.dto.ProductoDAO;
 		
 		public class AdminProductos{

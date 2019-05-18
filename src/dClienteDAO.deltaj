@@ -1,4 +1,4 @@
-delta dProductoDAO {
+delta dClienteDAO {
 	adds{
 		package com.eafit.reservasgenericas.dto;
 		
@@ -9,9 +9,9 @@ delta dProductoDAO {
 		import java.util.ArrayList;
 		import java.util.List;
 		import com.eafit.reservasgenericas.bd.Conexion;
-		import com.eafit.reservasenericas.modelos.Producto;
+		import com.eafit.reservasenericas.modelos.Cliente;
 		
-		public class ProductoDAO {
+		public class ClienteDAO {
 			Statement st = null;
 			PreparedStatement ps = null;
 			ResultSet rs = null;

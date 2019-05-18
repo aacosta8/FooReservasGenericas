@@ -9,24 +9,26 @@ import java.util.List;
 import
 fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Producto;
-/*** added by dProductoDAO* modified by dAgregarProducto
+fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Cliente;
+/*** added by dClienteDAO* modified by dAgregarCliente
  */
-public class ProductoDAO {
+public class ClienteDAO {
 	Statement st = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 	Connection conn = null;
 	Conexion conexion = null;
-	/*** added by dAgregarProducto
+	/*** added by dAgregarCliente
 	 */
-	public void agregar(Producto producto) {
+	public void agregar(Cliente cliente) {
 		try {
 			conn = Conexion.getConexion();
-			String query = "INSERT INTO categoria (nombre, descripcion) values (?,?)";
+			String query =
+			"INSERT INTO reservas (numeroID, nombre, apellidos) values (?,?,?)";
 			ps = conn.prepareStatement(query);
-			ps.setString(1, producto.getNombre());
-			ps.setString(2, producto.getDescripcion());
+			ps.setInt(1, cliente.getNumeroID());
+			ps.setString(2, cliente.getNombre());
+			ps.setString(3, cliente.getApellidos());
 			ps.executeUpdate();
 		}
 		catch(Exception e) {

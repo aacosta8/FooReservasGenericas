@@ -4,6 +4,7 @@ SPL FooReservasGenericas {
 	{
 		AdminReservas, AgregarReserva, ModificarReserva, EliminarReserva, ListarReservas, Reserva, ReservaDAO,
 		AdminProductos, AgregarProducto, ModificarProducto, EliminarProducto, ListarProductos, Producto, ProductoDAO,
+		AdminClientes, AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 		Conexion, Config
 	}
 
@@ -11,6 +12,7 @@ SPL FooReservasGenericas {
 	{    
 		dAdminReservas, dAgregarReserva, dModificarReserva, dEliminarReserva, dListarReservas, dReserva, dReservaDAO,
 		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dProducto, dProductoDAO,
+		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dConexion, dConfig	
 	} 
  
@@ -36,12 +38,23 @@ SPL FooReservasGenericas {
 		{dProducto} when (Producto);
 		{dProductoDAO} when (ProductoDAO);
 		
+		{dAdminClientes} when (AdminClientes);
+		{dAdminClientes, dClienteDAO, dAgregarCliente} when (AgregarCliente);
+		{dAdminClientes, dClienteDAO, dBuscarCliente} when (BuscarCliente);
+		{dCliente} when (Cliente);
+		{dClienteDAO} when (ClienteDAO);
+		
 		{dConexion} when (Conexion);
 		{dConfig} when (Config); 
-	} 
- 
+	}       
+        
 	Products {
 		// Put product definitions here.
-		reservas_v10 = { AgregarProducto, Producto, ProductoDAO, Conexion, Config}; 
-	}   
+		reservas_v10 = 
+		{ 
+			AgregarProducto, Producto, ProductoDAO, 
+			AgregarCliente, Cliente, ClienteDAO,
+			Conexion, Config
+		}; 
+	} 
 }  

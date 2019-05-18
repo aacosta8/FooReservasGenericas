@@ -6,7 +6,7 @@ delta dConexion {
 		import java.sql.Connection;
 		import java.sql.SQLException;
 		
-		import com.eafit.reservasgenericas.general.Config;
+		import com.eafit.reservasgenericas.configuracion.Config;
 		
 		public class Conexion {
 			private static final String SERVIDOR = Config.SERVIDOR;

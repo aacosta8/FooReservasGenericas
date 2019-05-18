@@ -9,6 +9,7 @@ delta dProductoDAO {
 		import java.util.ArrayList;
 		import java.util.List;
 		import com.eafit.reservasgenericas.bd.Conexion;
+		import com.eafit.reservasenericas.modelos.Producto;
 		
 		public class ProductoDAO {
 			Statement st = null;

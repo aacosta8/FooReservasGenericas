@@ -1,0 +1,33 @@
+delta dAgregarCliente {
+	modifies com.eafit.reservasgenericas.fop.AdminClientes{
+		adds public void agregar(int numeroID, String nombre,String apellidos) throws Exception {
+			Cliente cliente = new Cliente();
+			cliente.setNumeroID(numeroID);
+			cliente.setNombre(nombre);
+			cliente.setApellidos(apellidos);
+			clienteDAO.agregar(cliente);
+		}
+	}
+	
+	modifies com.eafit.reservasgenericas.dto.ClienteDAO{
+		adds public void agregar(Cliente cliente){
+			try { 
+				conn = Conexion.getConexion();
+				String query = "INSERT INTO reservas (numeroID, nombre, apellidos) values (?,?,?)";
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, cliente.getNumeroID());
+				ps.setString(2, cliente.getNombre());
+				ps.setString(3, cliente.getApellidos());
+				ps.executeUpdate();
+			}
+			catch(Exception e){ 
+				e.printStackTrace();
+			}
+			finally{
+				try { 
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}	
+		}
+	}
+}
