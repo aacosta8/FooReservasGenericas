@@ -46,8 +46,8 @@ SPL FooReservasGenericas {
 		
 		{dConexion} when (Conexion);
 		{dConfig} when (Config); 
-	}       
-        
+	}
+          
 	Products {
 		// Put product definitions here.
 		reservas_v10 = 

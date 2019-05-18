@@ -33,7 +33,7 @@ public class Cliente {
 	}
 	public void setApellidos(String apellidos) {
 		if(apellidos != null && apellidos.length() >= 3) {
-			this.nombre = nombre;
+			this.apellidos = apellidos;
 		}
 		else {
 			throw new IllegalArgumentException();
