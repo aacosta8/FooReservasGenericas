@@ -11,10 +11,14 @@ public class AdminProductos {
 	Producto producto = new Producto();
 	/*** added by dAgregarProducto
 	 */
-	public void agregar(String nombre, String descripcion) throws Exception {
+	public void agregar(String nombre, String descripcion, float precio, int
+		cantidadDisponible, String tipo) throws Exception {
 		Producto producto = new Producto();
 		producto.setNombre(nombre);
 		producto.setDescripcion(descripcion);
+		producto.setPrecio(precio);
+		producto.setCantidadDisponible(cantidadDisponible);
+		producto.setTipo(tipo);
 		productoDAO.agregar(producto);
 	}
 }

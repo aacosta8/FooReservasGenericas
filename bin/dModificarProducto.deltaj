@@ -1,2 +1,37 @@
 delta dModificarProducto {
+	modifies org.pl.eshopping.fop.AdminProducto{
+		adds public void modificar(int idProducto, String nombre, String descripcion, float precio, int cantidadDisponible, string tipo) throws Exception {
+			Categoria c = new Categoria();
+			producto.setIdProducto(idProducto);
+			producto.setNombre(nombre);
+			producto.setDescripcion(descripcion);
+			producto.setPrecio(precio);
+			producto.setCantidadDisponible(cantidadDisponible);
+			producto.setTipo(tipo);
+			catDAO.modificar(c);
+		}
+	}
+
+	modifies org.pl.eshopping.dto.CategoriaDAO{
+		adds public void modificar(Categoria c){
+			try {
+				conn = Conexion.getConexion();
+				String query = "UPDATE producto set nombre=?, descripcion=?, precio=?, cantidadDisponible=?, tipo=?,  WHERE idProducto=?";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, c.getNombre());
+				ps.setString(2, c.getDescripcion());
+				ps.setFloat(3, c.getPrecio());
+				ps.setInt(4, c.getCantidadDisponible());
+				ps.setString(5, c.getTipo());
+				ps.setString(6, c.getIdProducto().toString());
+				ps.executeUpdate();
+			}
+			catch(Exception e){ e.printStackTrace(); }
+			finally{
+				try { 
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}
+		}
+	}
 }

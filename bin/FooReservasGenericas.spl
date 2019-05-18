@@ -50,9 +50,9 @@ SPL FooReservasGenericas {
           
 	Products {  
 		// Put product definitions here.
-		reservas_v10 = 
+		reservas_v10 =  
 		{ 
-			AgregarProducto, Producto, ProductoDAO, 
+			AgregarProducto, ModificarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO, 
 			Conexion, Config
