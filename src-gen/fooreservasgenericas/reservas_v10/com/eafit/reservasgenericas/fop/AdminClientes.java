@@ -4,7 +4,8 @@ import
 fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Cliente;
 import
 fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.dto.ClienteDAO;
-/*** added by dAdminClientes* modified by dAgregarCliente
+/*** added by dAdminClientes* modified by dAgregarCliente* modified by
+dBuscarCliente
  */
 public class AdminClientes {
 	ClienteDAO clienteDAO = new ClienteDAO();
@@ -18,5 +19,10 @@ public class AdminClientes {
 		cliente.setNombre(nombre);
 		cliente.setApellidos(apellidos);
 		clienteDAO.agregar(cliente);
+	}
+	/*** added by dBuscarCliente
+	 */
+	public Cliente buscar(int numeroID) throws Exception {
+		return clienteDAO.buscar(numeroID);
 	}
 }

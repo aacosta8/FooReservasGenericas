@@ -8,7 +8,8 @@ import
 fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
 fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Cliente;
-/*** added by dClienteDAO* modified by dAgregarCliente
+/*** added by dClienteDAO* modified by dAgregarCliente* modified by
+dBuscarCliente
  */
 public class ClienteDAO {
 	Statement st = null;
@@ -39,5 +40,32 @@ public class ClienteDAO {
 			catch(Exception e) {
 			}
 		}
+	}
+	/*** added by dBuscarCliente
+	 */
+	public Cliente buscar(int numeroID) {
+		Cliente cliente = new Cliente();
+		try {
+			conn = Conexion.getConexion();
+			String query = "SELECT * FROM cliente WHERE numeroID = ?";
+			rs = ps.executeQuery(query);
+			while(rs.next()) {
+				cliente.setNumeroID(rs.getInt(1));
+				cliente.setNombre(rs.getString(2));
+				cliente.setApellidos(rs.getString(3));
+			}
+			return cliente;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn.close();
+			}
+			catch(Exception e) {
+			}
+		}
+		return cliente;
 	}
 }

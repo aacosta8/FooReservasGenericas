@@ -46,14 +46,14 @@ SPL FooReservasGenericas {
 		
 		{dConexion} when (Conexion);
 		{dConfig} when (Config); 
-	}
+	} 
           
-	Products {
+	Products {  
 		// Put product definitions here.
 		reservas_v10 = 
 		{ 
 			AgregarProducto, Producto, ProductoDAO, 
-			AgregarCliente, Cliente, ClienteDAO,
+			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO, 
 			Conexion, Config
 		}; 

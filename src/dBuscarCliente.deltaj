@@ -1,2 +1,36 @@
 delta dBuscarCliente {
+	modifies com.eafit.reservasgenericas.fop.AdminClientes{
+		adds public Cliente buscar(int numeroID) throws Exception {
+			return clienteDAO.buscar(numeroID);
+		}
+	}
+	
+	modifies com.eafit.reservasgenericas.dto.ClienteDAO{
+		adds public Cliente buscar(int numeroID) {
+			Cliente cliente = new Cliente();
+			try {
+				
+				conn = Conexion.getConexion();
+				String query = "SELECT * FROM cliente WHERE numeroID = ?";
+				rs = ps.executeQuery(query);
+				while (rs.next()) {
+					cliente.setNumeroID(rs.getInt(1));
+					cliente.setNombre(rs.getString(2));
+					cliente.setApellidos(rs.getString(3));
+	            }
+				return cliente;
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				try {
+					conn.close();
+				}
+				catch(Exception e) {
+				}
+			}
+			return cliente;
+		}
+	}
 }
