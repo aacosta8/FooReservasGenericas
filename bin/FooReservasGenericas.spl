@@ -47,23 +47,23 @@ SPL FooReservasGenericas {
 		{dClienteDAO} when (ClienteDAO);
 		
 		{dIndexPeliculas} when (IndexPeliculas);
-		{dAgregarClienteUI}when (AgregarClienteUI);
-		{dAgregarPeliculaUI}when (AgregarPeliculaUI); 
-		{dAgregarReservaUI}when (AgregarReservaUI); 
-		
+		{dAgregarClienteUI} when (AgregarClienteUI);
+		{dAgregarPeliculaUI} when (AgregarPeliculaUI); 
+		{dAgregarReservaUI} when (AgregarReservaUI); 
+		 
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
-	}    
-                
+	}         
+                 
 	Products {   
 		// Put product definitions here.
 		peliculas_v10 =     
-		{  
+		{   
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
-			IndexPeliculas,  
+			IndexPeliculas, AgregarClienteUI, 
 			Conexion, Config
 		}; 
-	} 
+	}  
 }     

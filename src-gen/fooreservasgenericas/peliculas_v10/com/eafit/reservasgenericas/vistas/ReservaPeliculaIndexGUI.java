@@ -5,26 +5,26 @@ import java.awt.EventQueue;
 import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/*** added by dIndexPeliculas
+/*** added by dIndexPeliculas* modified by dAgregarClienteUI
  */
 @SuppressWarnings("serial")
 public class ReservaPeliculaIndexGUI extends JFrame {
 	private JButton registrarPeliculas;
-	private JButton registrarUsuarios;
+	private JButton registrarClientes;
 	private JButton reservarPelicula;
 	public ReservaPeliculaIndexGUI() {
 		initComponents();
 	}
 	private void initComponents() {
-		registrarUsuarios = new JButton();
+		registrarClientes = new JButton();
 		registrarPeliculas = new JButton();
 		reservarPelicula = new JButton();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Inicio");
-		registrarUsuarios.setText("Registrar Usuarios");
-		registrarUsuarios.addActionListener(new ActionListener() {
+		registrarClientes.setText("Registrar Clientes");
+		registrarClientes.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent evt) {
-					registrarUsuariosActionPerformed(evt);
+					registrarClientesActionPerformed(evt);
 				}
 			});
 		registrarPeliculas.setText("Agregar Peliculas");
@@ -44,14 +44,14 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 		layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING,
 				layout.createSequentialGroup().addContainerGap(35,
 					Short.MAX_VALUE).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
-						false).addComponent(registrarUsuarios, GroupLayout.DEFAULT_SIZE, 129,
+						false).addComponent(registrarClientes, GroupLayout.DEFAULT_SIZE, 129,
 						Short.MAX_VALUE).addComponent(registrarPeliculas,
 						GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 						Short.MAX_VALUE).addComponent(reservarPelicula,
 						GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 						Short.MAX_VALUE)).addGap(35, 35, 35)));
 		layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(35,
-					35, 35).addComponent(registrarUsuarios).addGap(18, 18,
+					35, 35).addComponent(registrarClientes).addGap(18, 18,
 					18).addComponent(registrarPeliculas).addGap(18, 18,
 					18).addComponent(reservarPelicula).addContainerGap(35,
 					Short.MAX_VALUE)));
@@ -60,8 +60,6 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 	private void registrarPeliculasActionPerformed(ActionEvent evt) {
 	}
 	private void reservarPeliculaActionPerformed(ActionEvent evt) {
-	}
-	private void registrarUsuariosActionPerformed(ActionEvent evt) {
 	}
 	public static void main(String args []) {
 		try {
@@ -94,5 +92,11 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 					new ReservaPeliculaIndexGUI().setVisible(true);
 				}
 			});
+	}
+	/*** added by dAgregarClienteUI
+	 */
+	private void registrarClientesActionPerformed(ActionEvent evt) {
+		AgregarClienteUI AgregarClienteUI = new AgregarClienteUI();
+		AgregarClienteUI.setVisible(true);
 	}
 }
