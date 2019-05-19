@@ -66,12 +66,10 @@ delta dIndexPeliculas {
 							Short.MAX_VALUE)));
 				pack();
 			}
-			private void registrarPeliculasActionPerformed(ActionEvent
-				evt) {
-			}
-			private void reservarPeliculaActionPerformed(ActionEvent evt)
-			{
-			}
+		    private void reservarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+
+    		}       
+			
 			public static void main(String args []) {
 				try {
 					for(UIManager.LookAndFeelInfo info :

@@ -16,7 +16,7 @@ delta dAgregarClienteUI {
 		/*** added by dAgregarClienteUI
 		 */
 		@SuppressWarnings("serial")
-		public class AgregarClienteUI extends javax.swing.JFrame {
+		public class AgregarClienteUI extends JFrame {
 			
 		    private JButton btnReservar;
 		    private JLabel lblNombre;

@@ -5,7 +5,8 @@ import java.awt.EventQueue;
 import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/*** added by dIndexPeliculas* modified by dAgregarClienteUI
+/*** added by dIndexPeliculas* modified by dAgregarClienteUI* modified by
+dAgregarPeliculaUI
  */
 @SuppressWarnings("serial")
 public class ReservaPeliculaIndexGUI extends JFrame {
@@ -57,9 +58,8 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 					Short.MAX_VALUE)));
 		pack();
 	}
-	private void registrarPeliculasActionPerformed(ActionEvent evt) {
-	}
-	private void reservarPeliculaActionPerformed(ActionEvent evt) {
+	private void reservarPeliculaActionPerformed(java.awt.event.ActionEvent evt)
+	{
 	}
 	public static void main(String args []) {
 		try {
@@ -98,5 +98,11 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 	private void registrarClientesActionPerformed(ActionEvent evt) {
 		AgregarClienteUI AgregarClienteUI = new AgregarClienteUI();
 		AgregarClienteUI.setVisible(true);
+	}
+	/*** added by dAgregarPeliculaUI
+	 */
+	private void registrarPeliculasActionPerformed(ActionEvent evt) {
+		AgregarPeliculaGUI agregarPeliculaGUI = new AgregarPeliculaGUI();
+		agregarPeliculaGUI.setVisible(true);
 	}
 }

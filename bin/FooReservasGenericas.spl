@@ -7,7 +7,7 @@ SPL FooReservasGenericas {
 		AdminClientes, AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 		IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 		Conexion, Config
-	}
+	} 
  
 	Deltas = 
 	{     
@@ -54,7 +54,7 @@ SPL FooReservasGenericas {
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
 	}          
-                 
+                  
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
@@ -62,8 +62,8 @@ SPL FooReservasGenericas {
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
-			IndexPeliculas, AgregarClienteUI, 
+			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI,
 			Conexion, Config
-		}; 
-	}  
+		};      
+	}   
 }     
