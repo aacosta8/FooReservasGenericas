@@ -7,7 +7,7 @@ delta dConfig {
 			public static final int PUERTO = 3306;
 			public static final String BD = "reservas";
 			public static final String NOMBRE_USUARIO = "root";
-			public static final String CONTRASENA_USUARIO = "admin";
+			public static final String CONTRASENA_USUARIO = "bvuLWJ65";
 		}
 	}
 }

@@ -16,7 +16,7 @@ SPL FooReservasGenericas {
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
 		dConexion, dConfig	
-	} 
+	}  
   
 	Constraints {
 		// Put boolean expression representation of the feature model here. 
@@ -45,7 +45,7 @@ SPL FooReservasGenericas {
 		{dAdminClientes, dClienteDAO, dBuscarCliente} when (BuscarCliente);
 		{dCliente} when (Cliente);
 		{dClienteDAO} when (ClienteDAO);
-		
+		    
 		{dIndexPeliculas} when (IndexPeliculas);
 		{dAgregarClienteUI} when (AgregarClienteUI);
 		{dAgregarPeliculaUI} when (AgregarPeliculaUI); 
@@ -53,9 +53,9 @@ SPL FooReservasGenericas {
 		 
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
-	}         
+	}          
                  
-	Products {   
+	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
 		{   
