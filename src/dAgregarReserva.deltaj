@@ -1,5 +1,5 @@
 delta dAgregarReserva {
-		modifies com.eafit.reservasgenericas.fop.AdminReservas{
+		modifies com.eafit.reservasgenericas.gestion.AdminReservas{
 		adds public void agregar(Date fechaReserva, Date fechaUso, int cantidad, float costoTotal, Cliente cliente, Producto producto){
 			Reserva reserva = new Reserva();
 			reserva.setFechaReserva(fechaReserva);

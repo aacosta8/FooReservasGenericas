@@ -1,5 +1,5 @@
 delta dListarProductos {
-	modifies com.eafit.reservasgenericas.fop.AdminProductos{
+	modifies com.eafit.reservasgenericas.gestion.AdminProductos{
 		adds public List<Producto> listar() throws Exception {
 			return productoDAO.listar();
 		}
