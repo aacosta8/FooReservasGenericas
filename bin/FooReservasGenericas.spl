@@ -20,7 +20,7 @@ SPL FooReservasGenericas {
 		// Put boolean expression representation of the feature model here. 
 	}
    
-	Partitions {
+	Partitions { 
 		// Put mapping between deltas and feature configurations here.
 		{dAdminReservas} when (AdminReservas);
 		{dAdminReservas, dReservaDAO, dAgregarReserva} when (AgregarReserva);
@@ -44,15 +44,15 @@ SPL FooReservasGenericas {
 		{dCliente} when (Cliente);
 		{dClienteDAO} when (ClienteDAO);
 		
-		{dConexion} when (Conexion);
+		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
-	} 
-          
+	}    
+               
 	Products {  
 		// Put product definitions here.
-		reservas_v10 =  
+		reservas_v10 =     
 		{ 
-			AgregarProducto, ModificarProducto, Producto, ProductoDAO, 
+			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO, 
 			Conexion, Config

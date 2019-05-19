@@ -1,29 +1,29 @@
 delta dModificarProducto {
-	modifies org.pl.eshopping.fop.AdminProducto{
-		adds public void modificar(int idProducto, String nombre, String descripcion, float precio, int cantidadDisponible, string tipo) throws Exception {
-			Categoria c = new Categoria();
+	modifies com.eafit.reservasgenericas.fop.AdminProductos{
+		adds public void modificar(int idProducto, String nombre, String descripcion, float precio, int cantidadDisponible, String tipo) throws Exception {
+			Producto producto = new Producto();
 			producto.setIdProducto(idProducto);
 			producto.setNombre(nombre);
 			producto.setDescripcion(descripcion);
 			producto.setPrecio(precio);
 			producto.setCantidadDisponible(cantidadDisponible);
 			producto.setTipo(tipo);
-			catDAO.modificar(c);
+			productoDAO.modificar(producto);
 		}
 	}
 
-	modifies org.pl.eshopping.dto.CategoriaDAO{
-		adds public void modificar(Categoria c){
+	modifies com.eafit.reservasgenericas.dto.ProductoDAO{
+		adds public void modificar(Producto producto){
 			try {
 				conn = Conexion.getConexion();
 				String query = "UPDATE producto set nombre=?, descripcion=?, precio=?, cantidadDisponible=?, tipo=?,  WHERE idProducto=?";
 				ps = conn.prepareStatement(query);
-				ps.setString(1, c.getNombre());
-				ps.setString(2, c.getDescripcion());
-				ps.setFloat(3, c.getPrecio());
-				ps.setInt(4, c.getCantidadDisponible());
-				ps.setString(5, c.getTipo());
-				ps.setString(6, c.getIdProducto().toString());
+				ps.setString(1, producto.getNombre());
+				ps.setString(2, producto.getDescripcion());
+				ps.setFloat(3, producto.getPrecio());
+				ps.setInt(4, producto.getCantidadDisponible());
+				ps.setString(5, producto.getTipo());
+				ps.setInt(6, producto.getIdProducto());
 				ps.executeUpdate();
 			}
 			catch(Exception e){ e.printStackTrace(); }

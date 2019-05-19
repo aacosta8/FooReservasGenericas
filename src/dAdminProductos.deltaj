@@ -2,6 +2,7 @@ delta dAdminProductos {
 	adds{
 		package com.eafit.reservasgenericas.fop;
 		
+		import java.util.List;
 		import com.eafit.reservasenericas.modelos.Producto;
 		import com.eafit.reservasgenericas.dto.ProductoDAO;
 		

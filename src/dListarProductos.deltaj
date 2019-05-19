@@ -1,2 +1,39 @@
 delta dListarProductos {
+	modifies com.eafit.reservasgenericas.fop.AdminProductos{
+		adds public List<Producto> listar() throws Exception {
+			return productoDAO.listar();
+		}
+	}
+	
+	modifies com.eafit.reservasgenericas.dto.ProductoDAO{
+		adds public List<Producto> listar(){
+			List<Producto> resultado = new ArrayList<Producto>();
+			try {
+				conn = Conexion.getConexion();
+				String query = "SELECT id, nombre, descripcion FROM categoria";
+				ps = conn.prepareStatement(query);
+				ResultSet registros = ps.executeQuery();
+			 	while(registros.next()){
+			 		Producto producto = new Producto();
+			 		producto.setIdProducto(registros.getInt(1));
+			 		producto.setNombre(registros.getString(2));
+			 		producto.setDescripcion(registros.getString(3));
+			 		producto.setPrecio(registros.getFloat(4));
+			 		producto.setCantidadDisponible(registros.getInt(5));
+			 		producto.setTipo(registros.getString(6));
+			 		
+			 		resultado.add(producto);
+			 	}
+			}
+			catch(Exception e){ 
+				e.printStackTrace();
+			}
+			finally{
+				try { 
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}
+			return resultado;	
+		}
+	}
 }

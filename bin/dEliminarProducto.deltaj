@@ -1,2 +1,31 @@
 delta dEliminarProducto {
+		modifies com.eafit.reservasgenericas.fop.AdminProductos{
+		adds public void eliminar(Integer idProducto) throws Exception {
+			Producto producto = new Producto();
+			producto.setIdProducto(idProducto);
+			productoDAO.eliminar(producto);
+		}
+	}
+	
+	modifies com.eafit.reservasgenericas.dto.ProductoDAO{
+		adds public void eliminar(Producto producto) {
+			try {
+				conn = Conexion.getConexion();
+				String query = "DELETE FROM producto WHERE idProducto=?";
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, producto.getIdProducto());
+				ps.executeUpdate();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				try {
+					conn.close();
+				}
+				catch(Exception e) {
+				}
+			}
+		}
+	}
 }
