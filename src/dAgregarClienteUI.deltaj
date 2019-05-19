@@ -11,6 +11,7 @@ delta dAgregarClienteUI {
 		
 		import java.awt.event.*;
 		import javax.swing.*;
+		import com.eafit.reservasgenericas.gestion.AdminClientes;
 		
 		/*** added by dAgregarClienteUI
 		 */
@@ -117,9 +118,18 @@ delta dAgregarClienteUI {
 		        // TODO add your handling code here:
 		    }                                           
 		
-		    private void btnReservarActionPerformed(ActionEvent evt) {                                         
-		        // TODO add your handling code here:
-		    }
+			private void btnReservarActionPerformed(ActionEvent evt) {
+				AdminClientes admin = new AdminClientes();
+				int numeroID = Integer.valueOf(tfIdentificacion.getText());
+				String nombre = tfNombre.getText();
+				String apellidos = tfApellidos.getText();
+				try {
+					admin.agregar(numeroID, nombre, apellidos);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 	    }
 	}	
 }

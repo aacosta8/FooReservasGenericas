@@ -2,6 +2,8 @@ package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.vistas;
 
 import java.awt.event.*;
 import javax.swing.*;
+import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminClientes;
 /*** added by dAgregarClienteUI
  */
 @SuppressWarnings("serial")
@@ -75,5 +77,15 @@ public class AgregarClienteUI extends javax.swing.JFrame {
 	private void tfNombreActionPerformed(ActionEvent evt) {
 	}
 	private void btnReservarActionPerformed(ActionEvent evt) {
+		AdminClientes admin = new AdminClientes();
+		int numeroID = Integer.valueOf(tfIdentificacion.getText());
+		String nombre = tfNombre.getText();
+		String apellidos = tfApellidos.getText();
+		try {
+			admin.agregar(numeroID, nombre, apellidos);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
