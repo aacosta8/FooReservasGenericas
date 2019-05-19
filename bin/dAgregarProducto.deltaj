@@ -1,5 +1,5 @@
 delta dAgregarProducto {
-	modifies com.eafit.reservasgenericas.fop.AdminProductos{
+	modifies com.eafit.reservasgenericas.gestion.AdminProductos{
 		adds public void agregar(String nombre, String descripcion, float precio, int cantidadDisponible, String tipo) throws Exception {
 			Producto producto = new Producto();
 			producto.setNombre(nombre);

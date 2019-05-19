@@ -1,6 +1,6 @@
 delta dAdminClientes {
 		adds{
-		package com.eafit.reservasgenericas.fop;
+		package com.eafit.reservasgenericas.gestion;
 		
 		import com.eafit.reservasenericas.modelos.Cliente;
 		import com.eafit.reservasgenericas.dto.ClienteDAO;

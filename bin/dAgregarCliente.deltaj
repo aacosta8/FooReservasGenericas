@@ -1,5 +1,5 @@
 delta dAgregarCliente {
-	modifies com.eafit.reservasgenericas.fop.AdminClientes{
+	modifies com.eafit.reservasgenericas.gestion.AdminClientes{
 		adds public void agregar(int numeroID, String nombre,String apellidos) throws Exception {
 			Cliente cliente = new Cliente();
 			cliente.setNumeroID(numeroID);

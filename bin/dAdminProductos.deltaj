@@ -1,6 +1,6 @@
 delta dAdminProductos {
 	adds{
-		package com.eafit.reservasgenericas.fop;
+		package com.eafit.reservasgenericas.gestion;
 		
 		import java.util.List;
 		import com.eafit.reservasenericas.modelos.Producto;

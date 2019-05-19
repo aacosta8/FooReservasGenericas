@@ -1,5 +1,5 @@
 delta dEliminarProducto {
-		modifies com.eafit.reservasgenericas.fop.AdminProductos{
+		modifies com.eafit.reservasgenericas.gestion.AdminProductos{
 		adds public void eliminar(Integer idProducto) throws Exception {
 			Producto producto = new Producto();
 			producto.setIdProducto(idProducto);

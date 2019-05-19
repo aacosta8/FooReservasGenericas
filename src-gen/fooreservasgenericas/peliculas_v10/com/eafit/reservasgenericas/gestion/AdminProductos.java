@@ -1,4 +1,4 @@
-package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.fop;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion;
 
 import java.util.List;
 import
