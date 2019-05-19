@@ -1,5 +1,5 @@
 package
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.configuracion;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.configuracion;
 
 /*** added by dConfig
  */

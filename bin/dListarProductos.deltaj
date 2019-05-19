@@ -10,7 +10,7 @@ delta dListarProductos {
 			List<Producto> resultado = new ArrayList<Producto>();
 			try {
 				conn = Conexion.getConexion();
-				String query = "SELECT id, nombre, descripcion FROM categoria";
+				String query = "SELECT idProducto, nombre, descripcion, precio, cantidadDisponible, tipo FROM producto";
 				ps = conn.prepareStatement(query);
 				ResultSet registros = ps.executeQuery();
 			 	while(registros.next()){

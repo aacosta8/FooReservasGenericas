@@ -16,7 +16,7 @@ delta dAgregarReserva {
 		adds public void agregar(Reserva reserva){
 			try { 
 				conn = Conexion.getConexion();
-				String query = "INSERT INTO reservas (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
+				String query = "INSERT INTO reserva (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
 				ps = conn.prepareStatement(query);
 //				ps.setString(1, producto.getNombre()); 
 

@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS reserva (
     FOREIGN KEY (idProducto) REFERENCES producto(idProducto)
 );
 
+insert into producto (nombre) values('Producto 1');
 -- drop table  reserva;
 -- drop table cliente;
 -- drop table producto;

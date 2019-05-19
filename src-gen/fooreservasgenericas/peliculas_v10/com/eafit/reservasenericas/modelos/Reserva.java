@@ -1,4 +1,4 @@
-package fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos;
 
 import java.util.Date;
 /*** added by dReserva

@@ -1,13 +1,13 @@
-package fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.dto;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.bd.Conexion;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Cliente;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Cliente;
 /*** added by dClienteDAO* modified by dAgregarCliente* modified by
 dBuscarCliente
  */
@@ -23,7 +23,7 @@ public class ClienteDAO {
 		try {
 			conn = Conexion.getConexion();
 			String query =
-			"INSERT INTO reservas (numeroID, nombre, apellidos) values (?,?,?)";
+			"INSERT INTO cliente (numeroID, nombre, apellidos) values (?,?,?)";
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, cliente.getNumeroID());
 			ps.setString(2, cliente.getNombre());
@@ -47,7 +47,8 @@ public class ClienteDAO {
 		Cliente cliente = new Cliente();
 		try {
 			conn = Conexion.getConexion();
-			String query = "SELECT * FROM cliente WHERE numeroID = ?";
+			String query =
+			"SELECT numeroID, nombre, apellidos FROM cliente WHERE numeroID = ?";
 			rs = ps.executeQuery(query);
 			while(rs.next()) {
 				cliente.setNumeroID(rs.getInt(1));

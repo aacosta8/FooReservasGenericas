@@ -1,10 +1,10 @@
-package fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.fop;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.fop;
 
 import java.util.List;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Producto;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.dto.ProductoDAO;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto.ProductoDAO;
 /*** added by dAdminProductos* modified by dAgregarProducto* modified by
 dModificarProducto* modified by dEliminarProducto* modified by
 dListarProductos

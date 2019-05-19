@@ -1,4 +1,4 @@
-package fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.dto;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.bd.Conexion;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Producto;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
 /*** added by dProductoDAO* modified by dAgregarProducto* modified by
 dModificarProducto* modified by dEliminarProducto* modified by
 dListarProductos
@@ -100,7 +100,8 @@ public class ProductoDAO {
 		List<Producto> resultado = new ArrayList<Producto>();
 		try {
 			conn = Conexion.getConexion();
-			String query = "SELECT id, nombre, descripcion FROM categoria";
+			String query =
+			"SELECT idProducto, nombre, descripcion, precio, cantidadDisponible, tipo FROM producto";
 			ps = conn.prepareStatement(query);
 			ResultSet registros = ps.executeQuery();
 			while(registros.next()) {

@@ -5,20 +5,22 @@ SPL FooReservasGenericas {
 		AdminReservas, AgregarReserva, ModificarReserva, EliminarReserva, ListarReservas, Reserva, ReservaDAO,
 		AdminProductos, AgregarProducto, ModificarProducto, EliminarProducto, ListarProductos, Producto, ProductoDAO,
 		AdminClientes, AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
+		IndexPeliculas, AgregarUsuarioUI, AgregarPeliculaUI, AgregarReservaUI,
 		Conexion, Config
 	}
-
+ 
 	Deltas = 
-	{    
+	{     
 		dAdminReservas, dAgregarReserva, dModificarReserva, dEliminarReserva, dListarReservas, dReserva, dReservaDAO,
 		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dProducto, dProductoDAO,
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
+		dIndexPeliculas, dAgregarUsuarioUI, dAgregarPeliculaUI, dAgregarReservaUI,
 		dConexion, dConfig	
 	} 
   
 	Constraints {
 		// Put boolean expression representation of the feature model here. 
-	}
+	} 
    
 	Partitions { 
 		// Put mapping between deltas and feature configurations here.
@@ -44,17 +46,23 @@ SPL FooReservasGenericas {
 		{dCliente} when (Cliente);
 		{dClienteDAO} when (ClienteDAO);
 		
+		{dIndexPeliculas} when (IndexPeliculas);
+		{dAgregarUsuarioUI}when (AgregarUsuarioUI);
+		{dAgregarPeliculaUI}when (AgregarPeliculaUI); 
+		{dAgregarReservaUI}when (AgregarReservaUI); 
+		
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
 	}    
-               
-	Products {  
+                
+	Products {   
 		// Put product definitions here.
-		reservas_v10 =     
+		peliculas_v10 =     
 		{ 
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
-			AgregarReserva, Reserva, ReservaDAO, 
+			AgregarReserva, Reserva, ReservaDAO,
+			IndexPeliculas,  
 			Conexion, Config
 		}; 
 	} 

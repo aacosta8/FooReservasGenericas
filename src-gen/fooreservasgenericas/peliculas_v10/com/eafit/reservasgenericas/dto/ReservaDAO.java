@@ -1,13 +1,13 @@
-package fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.dto;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.bd.Conexion;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Reserva;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Reserva;
 /*** added by dReservaDAO* modified by dAgregarReserva
  */
 public class ReservaDAO {
@@ -22,7 +22,7 @@ public class ReservaDAO {
 		try {
 			conn = Conexion.getConexion();
 			String query =
-			"INSERT INTO reservas (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
+			"INSERT INTO reserva (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
 			ps = conn.prepareStatement(query);
 			ps.executeUpdate();
 		}

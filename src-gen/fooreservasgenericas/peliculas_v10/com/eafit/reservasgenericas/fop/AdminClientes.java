@@ -1,9 +1,9 @@
-package fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.fop;
+package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.fop;
 
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasenericas.modelos.Cliente;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Cliente;
 import
-fooreservasgenericas.reservas_v10.com.eafit.reservasgenericas.dto.ClienteDAO;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto.ClienteDAO;
 /*** added by dAdminClientes* modified by dAgregarCliente* modified by
 dBuscarCliente
  */

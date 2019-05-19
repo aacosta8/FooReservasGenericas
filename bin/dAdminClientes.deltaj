@@ -1,0 +1,13 @@
+delta dAdminClientes {
+		adds{
+		package com.eafit.reservasgenericas.fop;
+		
+		import com.eafit.reservasenericas.modelos.Cliente;
+		import com.eafit.reservasgenericas.dto.ClienteDAO;
+		
+		public class AdminClientes{
+			ClienteDAO clienteDAO = new ClienteDAO();
+			Cliente cliente = new Cliente();
+		}
+	}
+}
