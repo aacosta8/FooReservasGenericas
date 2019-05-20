@@ -1,131 +1,104 @@
 delta dIndexVuelos {
 	adds{
-		package com.eafit.reservapeliculas.vistas;
+		package com.eafit.reservasgenericas.vistas;
 
-		public class ReservaVueloIndexGUI extends javax.swing.JFrame {
+		import javax.swing.*;
+		import java.awt.EventQueue;
+		import java.awt.event.*;
+		import java.util.logging.Level;
+		import java.util.logging.Logger;
 		
-		        public ReservaVueloIndexGUI() {
-		            initComponents();
-		        }
-		
-		    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-		    private void initComponents() {
-		
-		        registrarUsuarios = new javax.swing.JButton();
-		        registrarVuelo = new javax.swing.JButton();
-		        reservarVuelo = new javax.swing.JButton();
-		
-		        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		        setTitle("Inicio");
-		
-		        registrarUsuarios.setText("Registrar Usuarios");
-		        registrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-		            public void actionPerformed(java.awt.event.ActionEvent evt) {
-		                registrarUsuariosActionPerformed(evt);
-		            }
-		        });
-		
-		        registrarVuelo.setText("Agregar Vuelo");
-		        registrarVuelo.addActionListener(new java.awt.event.ActionListener() {
-		            public void actionPerformed(java.awt.event.ActionEvent evt) {
-		                registrarVueloActionPerformed(evt);
-		            }
-		        });
-		
-		        reservarVuelo.setText("Reservar Vuelo");
-		        reservarVuelo.addActionListener(new java.awt.event.ActionListener() {
-		            public void actionPerformed(java.awt.event.ActionEvent evt) {
-		                reservarVueloActionPerformed(evt);
-		            }
-		        });
-		
-		        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		        getContentPane().setLayout(layout);
-		        layout.setHorizontalGroup(
-		            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-		            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-		                .addContainerGap(35, Short.MAX_VALUE)
-		                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-		                    .addComponent(registrarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-		                    .addComponent(registrarVuelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-		                    .addComponent(reservarVuelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-		                .addGap(35, 35, 35))
-		        );
-		        layout.setVerticalGroup(
-		            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-		            .addGroup(layout.createSequentialGroup()
-		                .addGap(35, 35, 35)
-		                .addComponent(registrarUsuarios)
-		                .addGap(18, 18, 18)
-		                .addComponent(registrarVuelo)
-		                .addGap(18, 18, 18)
-		                .addComponent(reservarVuelo)
-		                .addContainerGap(35, Short.MAX_VALUE))
-		        );
-		
-		        pack();
-		    }// </editor-fold>                        
-		
-		    private void registrarVueloActionPerformed(java.awt.event.ActionEvent evt) {                                               
-		        // TODO add your handling code here:
-		        AgregarVueloGUI agregarVueloGUI = new AgregarVueloGUI();
-		        agregarVueloGUI.setVisible(true);
-		    }                                              
-		
-		    private void reservarVueloActionPerformed(java.awt.event.ActionEvent evt) {                                              
-		        // TODO add your handling code here:
-		        AgregarReservaVueloGUI agregarVueloGUI = new AgregarReservaVueloGUI();
-		        agregarVueloGUI.setVisible(true);
-		    }                                             
-		
-		    private void registrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-		        // TODO add your handling code here:
-		        AgregarClienteUI agregarClienteUI = new AgregarClienteUI();
-		        
-		        agregarClienteUI.setVisible(true);
-		    }                                                 
-		
-		    /**
-		     * @param args the command line arguments
-		     */
-		    public static void main(String args[]) {
-		        /* Set the Nimbus look and feel */
-		        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-		        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-		         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-		         */
-		        try {
-		            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-		                if ("Nimbus".equals(info.getName())) {
-		                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-		                    break;
-		                }
-		            }
-		        } catch (ClassNotFoundException ex) {
-		            java.util.logging.Logger.getLogger(ReservaVueloIndexGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		        } catch (InstantiationException ex) {
-		            java.util.logging.Logger.getLogger(ReservaVueloIndexGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		        } catch (IllegalAccessException ex) {
-		            java.util.logging.Logger.getLogger(ReservaVueloIndexGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-		            java.util.logging.Logger.getLogger(ReservaVueloIndexGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		        }
-		        //</editor-fold>
-		        //</editor-fold>
-		
-		        /* Create and display the form */
-		        java.awt.EventQueue.invokeLater(new Runnable() {
-		            public void run() {
-		                new ReservaVueloIndexGUI().setVisible(true);
-		            }
-		        });
-		    }
-		
-		    // Variables declaration - do not modify                     
-		    private javax.swing.JButton registrarUsuarios;
-		    private javax.swing.JButton registrarVuelo;
-		    private javax.swing.JButton reservarVuelo;
-		    // End of variables declaration                   
+		/*** added by dIndexPeliculas
+		 */
+		@SuppressWarnings("serial")
+		public class ReservaPeliculaIndexGUI extends JFrame {
+			
+			private JButton registrarPeliculas;
+			private JButton registrarClientes;
+			private JButton reservarPelicula;
+			
+			public ReservaPeliculaIndexGUI() {
+				initComponents();
+			}
+			private void initComponents() {
+				registrarClientes = new JButton();
+				registrarPeliculas = new JButton();
+				reservarPelicula = new JButton();
+				setDefaultCloseOperation(EXIT_ON_CLOSE);
+				setTitle("Inicio");
+				registrarClientes.setText("Registrar Clientes");
+				registrarClientes.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent evt) {
+							registrarClientesActionPerformed(evt);
+						}
+					});
+				registrarPeliculas.setText("Agregar Peliculas");
+				registrarPeliculas.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent evt) {
+							registrarPeliculasActionPerformed(evt);
+						}
+					});
+				reservarPelicula.setText("Reservar Pelicula");
+				reservarPelicula.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent evt) {
+							reservarPeliculaActionPerformed(evt);
+						}
+					});
+				GroupLayout layout = new
+				GroupLayout(getContentPane());
+				getContentPane().setLayout(layout);
+				layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING,
+						layout.createSequentialGroup().addContainerGap(35,
+							Short.MAX_VALUE).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
+								false).addComponent(registrarClientes,
+								GroupLayout.DEFAULT_SIZE, 129,
+								Short.MAX_VALUE).addComponent(registrarPeliculas,
+								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE).addComponent(reservarPelicula,
+								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)).addGap(35, 35,
+							35)));
+				layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(35,
+							35, 35).addComponent(registrarClientes).addGap(18, 18,
+							18).addComponent(registrarPeliculas).addGap(18, 18,
+							18).addComponent(reservarPelicula).addContainerGap(35,
+							Short.MAX_VALUE)));
+				pack();
+			}
+			
+			public static void main(String args []) {
+				try {
+					for(UIManager.LookAndFeelInfo info :
+						UIManager.getInstalledLookAndFeels()) {
+						if("Nimbus".equals(info.getName())) {
+							UIManager.setLookAndFeel(info.getClassName());
+							break;
+						}
+					}
+				}
+				catch(ClassNotFoundException ex) {
+					Logger.getLogger(ReservaPeliculaIndexGUI.class.getName()).log(Level.SEVERE,
+						null, ex);
+				}
+				catch(InstantiationException ex) {
+					Logger.getLogger(ReservaPeliculaIndexGUI.class.getName()).log(Level.SEVERE,
+						null, ex);
+				}
+				catch(IllegalAccessException ex) {
+					Logger.getLogger(ReservaPeliculaIndexGUI.class.getName()).log(Level.SEVERE,
+						null, ex);
+				}
+				catch(javax.swing.UnsupportedLookAndFeelException ex) {
+					Logger.getLogger(ReservaPeliculaIndexGUI.class.getName()).log(Level.SEVERE,
+						null, ex);
+				}
+				EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							new ReservaPeliculaIndexGUI().setVisible(true);
+						}
+					});
+			}
 		}
-
+	}
 }
