@@ -19,7 +19,7 @@ SPL FooReservasGenericas {
 		dIndexVuelos, dAgregarVueloUI, dAgregarReservaVueloUI,
 		dConexion, dConfig, dConfigVuelos	
 	}  
-        
+         
 	Constraints { 
 		// Put boolean expression representation of the feature model here. 
 	} 
@@ -66,7 +66,7 @@ SPL FooReservasGenericas {
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
-		{   
+		{    
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, BuscarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
@@ -79,9 +79,9 @@ SPL FooReservasGenericas {
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, BuscarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
-			IndexVuelos, AgregarVueloUI,
+			IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI,
 			Conexion, ConfigVuelos
-		};      		
+		};      		 
 	}
 }
     
