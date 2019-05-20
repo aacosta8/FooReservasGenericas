@@ -8,7 +8,7 @@ delta dAgregarVueloUI {
 	
 	adds{
 
-		package com.eafit.reservapeliculas.vistas;
+		package com.eafit.reservasgenericas.vistas;
 		
 		public class AgregarVueloGUI extends javax.swing.JFrame {
 		    public AgregarVueloGUI() {
