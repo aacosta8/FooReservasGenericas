@@ -12,13 +12,13 @@ delta dAgregarReservaUI {
 		import javax.swing.*;
 		import java.awt.event.*;
 		import java.util.List;
-		
+		import java.util.Date;
 		import com.eafit.reservasgenericas.modelos.Cliente;
 		import com.eafit.reservasgenericas.modelos.Producto;
 		import com.eafit.reservasgenericas.gestion.AdminProductos;
 		import com.eafit.reservasgenericas.gestion.AdminClientes;
-		/*** added by dAgregarReservaUI
-		 */
+		import com.eafit.reservasgenericas.gestion.AdminReservas;
+
 		@SuppressWarnings("serial")
 		public class AgregarReservaPeliculaGUI extends JFrame {
 			private JButton btnReservar;
@@ -48,10 +48,10 @@ delta dAgregarReservaUI {
 			private JTextField tfPrecio;
 			AdminProductos adminProductos = new AdminProductos();
 			AdminClientes adminClientes = new AdminClientes();
+			AdminReservas adminReservas = new AdminReservas();
 			List<Producto> productos;
 			Producto producto = new Producto();
 			Cliente cliente = new Cliente();
-			
 			@SuppressWarnings("unchecked")
 			public AgregarReservaPeliculaGUI() {
 				initComponents();
@@ -64,7 +64,8 @@ delta dAgregarReservaUI {
 				for(int i = 0;
 					i < productos.size();
 					i ++) {
-					cbxPeliculas.addItem(productos.get(i).getNombre());
+					cbxPeliculas.addItem(productos.get(i).getIdProducto() + ":" +
+						productos.get(i).getNombre());
 				}
 			}
 			private void initComponents() {
@@ -199,7 +200,8 @@ delta dAgregarReservaUI {
 			}
 			private void btnBuscarActionPerformed(ActionEvent evt) {
 				try {
-					cliente = adminClientes.buscar(Integer.valueOf(tfIdentificacion.getText()));
+					cliente =
+					adminClientes.buscar(Integer.valueOf(tfIdentificacion.getText()));
 					tfNombre.setText(cliente.getNombre());
 					tfApellidos.setText(cliente.getApellidos());
 				}
@@ -209,7 +211,9 @@ delta dAgregarReservaUI {
 			}
 			private void btnSeleccionarActionPerformed(ActionEvent evt) {
 				try {
-					producto = adminProductos.buscar(1);
+					int id =
+					Integer.valueOf(cbxPeliculas.getSelectedItem().toString().split(":")[0]);
+					producto = adminProductos.buscar(id);
 					tfDescripcion.setText(producto.getDescripcion());
 					tfCantidadDisponible.setText(String.valueOf(producto.getCantidadDisponible()));
 					tfPrecio.setText(String.valueOf(producto.getPrecio()));
@@ -219,6 +223,12 @@ delta dAgregarReservaUI {
 				}
 			}
 			private void btnReservarActionPerformed(ActionEvent evt) {
+				Date fechaReserva = new Date(System.currentTimeMillis());
+				Date fechaUso = new Date(System.currentTimeMillis());
+				int cantidad = 1;
+				float costoTotal = 1;
+				adminReservas.agregar(fechaReserva, fechaUso, cantidad, costoTotal, cliente,
+					producto);
 			}
 		}
 	}

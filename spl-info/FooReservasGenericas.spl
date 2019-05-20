@@ -61,7 +61,7 @@ SPL FooReservasGenericas {
 		{dConfig} when (Config);
 		{dConfigVuelos} when (ConfigVuelos); 
 	}           
-                  
+                    
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
