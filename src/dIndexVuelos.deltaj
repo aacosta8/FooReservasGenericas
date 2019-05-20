@@ -32,13 +32,13 @@ delta dIndexVuelos {
 							registrarClientesActionPerformed(evt);
 						}
 					});
-				registrarPeliculas.setText("Agregar Peliculas");
+				registrarPeliculas.setText("Agregar Vuelo");
 				registrarPeliculas.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent evt) {
 							registrarPeliculasActionPerformed(evt);
 						}
 					});
-				reservarPelicula.setText("Reservar Pelicula");
+				reservarPelicula.setText("Reservar Asiento");
 				reservarPelicula.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent evt) {
 							reservarPeliculaActionPerformed(evt);

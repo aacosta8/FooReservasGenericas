@@ -42,10 +42,10 @@ delta dAgregarVueloUI {
 				tfCantidad = new JTextField();
 				tfPrecio = new JTextField();
 				btnGuardar = new JButton();
-				setTitle("Registrar Pelicula");
+				setTitle("Registrar Vuelo");
 				lblNombre.setText("Nombre");
 				lblDescripcion.setText("Descripción");
-				lblGenero.setText("Género");
+				lblGenero.setText("Clase");
 				lblCantidad.setText("Cantidad");
 				lblPrecio.setText("Precio");
 				btnGuardar.setText("Guardar");

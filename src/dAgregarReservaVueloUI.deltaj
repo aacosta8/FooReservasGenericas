@@ -95,7 +95,7 @@ delta dAgregarReservaVueloUI {
 				tfCostoTotal = new JTextField();
 				btnReservar = new JButton();
 				setTitle("Crear Reserva");
-				lblPelicula.setText("Peliculas");
+				lblPelicula.setText("Vuelos");
 				cbxPeliculas.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent evt) {
 							cbxPeliculasActionPerformed(evt);
@@ -118,8 +118,8 @@ delta dAgregarReservaVueloUI {
 					});
 				lblNombre.setText("Nombre");
 				lblApellidos.setText("Apellidos");
-				lblFechaReserva.setText("Fecha de la reserva");
-				lblCantidad.setText("Cantidad");
+				lblFechaReserva.setText("Fecha del vuelo");
+				lblCantidad.setText("Cantidad de pasajeros");
 				lblPrecio.setText("Precio");
 				lblCostoTotal.setText("Costo total");
 				btnReservar.setText("Reservar");
