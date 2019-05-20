@@ -1,16 +1,9 @@
 delta dAgregarVueloUI {
-	modifies com.eafit.reservasgenericas.vistas.ReservaVueloIndexGUI{
-		adds private void registrarVuelosActionPerformed(ActionEvent evt) {                                                   
-        	AgregarVueloGUI agregarVueloGUI = new AgregarVueloGUI();
-        	agregarVueloGUI.setVisible(true);
-    	}
-	}
-	
 	adds{
+		package com.eafit.reservapeliculas.vistas;
 
-		package com.eafit.reservasgenericas.vistas;
-		
 		public class AgregarVueloGUI extends javax.swing.JFrame {
+
 		    public AgregarVueloGUI() {
 		        initComponents();
 		    }
@@ -109,17 +102,7 @@ delta dAgregarVueloUI {
 		    }// </editor-fold>                        
 		
 		    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {                                           
-		        String nombre = tfDe.getText();
-				String descripcion = tfDescripcion.getText();
-				float precio = Float.valueOf(tfPrecio.getText());
-				int cantidadDisponible = Integer.valueOf(tfCantidad.getText());
-				String tipo = tfGenero.getText();
-				
-				try {
-					adminProductos.agregar(nombre, descripcion, precio, cantidadDisponible, tipo);
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
+		        // TODO add your handling code here:
 		    }                                          
 		
 		
@@ -139,4 +122,5 @@ delta dAgregarVueloUI {
 		    // End of variables declaration                   
 		}
 	}
+		
 }
