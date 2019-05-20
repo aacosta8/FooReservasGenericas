@@ -17,7 +17,7 @@ SPL FooReservasGenericas {
 		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
 		dConexion, dConfig	
 	}  
-   
+      
 	Constraints { 
 		// Put boolean expression representation of the feature model here. 
 	} 

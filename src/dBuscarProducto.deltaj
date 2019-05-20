@@ -1,7 +1,7 @@
 delta dBuscarProducto {
 	modifies com.eafit.reservasgenericas.gestion.AdminProductos{
 		adds public Producto buscar(int idProducto) throws Exception {
-			return productoDao.buscar(idProducto);
+			return productoDAO.buscar(idProducto);
 		}
 	}
 	

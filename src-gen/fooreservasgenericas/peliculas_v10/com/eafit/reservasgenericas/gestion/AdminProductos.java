@@ -52,6 +52,6 @@ public class AdminProductos {
 	/*** added by dBuscarProducto
 	 */
 	public Producto buscar(int idProducto) throws Exception {
-		return productoDao.buscar(idProducto);
+		return productoDAO.buscar(idProducto);
 	}
 }

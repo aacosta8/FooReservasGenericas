@@ -2,67 +2,103 @@ package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.vistas;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.List;
+import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
+import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.*;
 /*** added by dAgregarReservaUI
  */
+@SuppressWarnings("serial")
 public class AgregarReservaPeliculaGUI extends JFrame {
-	String items [] = {
-		"Hola", "Mundo"
-	};
+	private JButton btnReservar;
+	private JButton btnSeleccionar;
+	private JComboBox cbxPeliculas;
+	private JButton btnBuscar;
+	private JSeparator jSeparator1;
+	private JSeparator jSeparator2;
+	private JLabel lblApellidos;
+	private JLabel lblCantidad;
+	private JLabel lblCantidadDisponible;
+	private JLabel lblCostoTotal;
+	private JLabel lblDescripcion;
+	private JLabel lblFechaReserva;
+	private JLabel lblIdentificacion;
+	private JLabel lblNombre;
+	private JLabel lblPelicula;
+	private JLabel lblPrecio;
+	private JTextField tfApellidos;
+	private JTextField tfCantidad;
+	private JTextField tfCantidadDisponible;
+	private JTextField tfCostoTotal;
+	private JTextField tfDescripcion;
+	private JTextField tfFechaReserva;
+	private JTextField tfIdentificacion;
+	private JTextField tfNombre;
+	private JTextField tfPrecio;
+	AdminProductos adminProductos = new AdminProductos();
+	List<Producto> productos;
+	@SuppressWarnings("unchecked")
 	public AgregarReservaPeliculaGUI() {
 		initComponents();
+		try {
+			productos = adminProductos.listar();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		for(int i = 0;
-			i < items.length;
+			i < productos.size();
 			i ++) {
-			cbxPeliculas.addItem(items[i]);
+			cbxPeliculas.addItem(productos.get(0).getNombre());
 		}
 	}
-	@SuppressWarnings("unchecked")
 	private void initComponents() {
-		lblPelicula = new javax.swing.JLabel();
-		jSeparator1 = new javax.swing.JSeparator();
-		cbxPeliculas = new javax.swing.JComboBox();
-		lblDescripcion = new javax.swing.JLabel();
-		tfDescripcion = new javax.swing.JTextField();
-		lblCantidadDisponible = new javax.swing.JLabel();
-		tfCantidadDisponible = new javax.swing.JTextField();
-		btnSeleccionar = new javax.swing.JButton();
-		jSeparator2 = new javax.swing.JSeparator();
-		lblIdentificacion = new javax.swing.JLabel();
-		tfIdentificacion = new javax.swing.JTextField();
-		jButton1 = new javax.swing.JButton();
-		lblNombre = new javax.swing.JLabel();
-		tfNombre = new javax.swing.JTextField();
-		lblApellidos = new javax.swing.JLabel();
-		tfApellidos = new javax.swing.JTextField();
-		lblFechaReserva = new javax.swing.JLabel();
-		lblCantidad = new javax.swing.JLabel();
-		lblPrecio = new javax.swing.JLabel();
-		tfPrecio = new javax.swing.JTextField();
-		lblCostoTotal = new javax.swing.JLabel();
-		tfFechaReserva = new javax.swing.JTextField();
-		tfCantidad = new javax.swing.JTextField();
-		tfCostoTotal = new javax.swing.JTextField();
-		btnReservar = new javax.swing.JButton();
+		lblPelicula = new JLabel();
+		jSeparator1 = new JSeparator();
+		cbxPeliculas = new JComboBox();
+		lblDescripcion = new JLabel();
+		tfDescripcion = new JTextField();
+		lblCantidadDisponible = new JLabel();
+		tfCantidadDisponible = new JTextField();
+		btnSeleccionar = new JButton();
+		jSeparator2 = new JSeparator();
+		lblIdentificacion = new JLabel();
+		tfIdentificacion = new JTextField();
+		btnBuscar = new JButton();
+		lblNombre = new JLabel();
+		tfNombre = new JTextField();
+		lblApellidos = new JLabel();
+		tfApellidos = new JTextField();
+		lblFechaReserva = new JLabel();
+		lblCantidad = new JLabel();
+		lblPrecio = new JLabel();
+		tfPrecio = new JTextField();
+		lblCostoTotal = new JLabel();
+		tfFechaReserva = new JTextField();
+		tfCantidad = new JTextField();
+		tfCostoTotal = new JTextField();
+		btnReservar = new JButton();
 		setTitle("Crear Reserva");
 		lblPelicula.setText("Peliculas");
-		cbxPeliculas.addActionListener(new java.awt.event.ActionListener() {
-				public void actionPerformed(java.awt.event.ActionEvent evt) {
+		cbxPeliculas.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {
 					cbxPeliculasActionPerformed(evt);
 				}
 			});
 		lblDescripcion.setText("Descripción");
 		lblCantidadDisponible.setText("Cantidad disponible");
 		btnSeleccionar.setText("Seleccionar");
-		btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
-				public void actionPerformed(java.awt.event.ActionEvent evt) {
+		btnSeleccionar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {
 					btnSeleccionarActionPerformed(evt);
 				}
 			});
 		lblIdentificacion.setText("Identificación");
-		jButton1.setText("Buscar");
-		jButton1.addActionListener(new java.awt.event.ActionListener() {
-				public void actionPerformed(java.awt.event.ActionEvent evt) {
-					jButton1ActionPerformed(evt);
+		btnBuscar.setText("Buscar");
+		btnBuscar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {
+					btnBuscarActionPerformed(evt);
 				}
 			});
 		lblNombre.setText("Nombre");
@@ -72,129 +108,86 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 		lblPrecio.setText("Precio");
 		lblCostoTotal.setText("Costo total");
 		btnReservar.setText("Reservar");
-		btnReservar.addActionListener(new java.awt.event.ActionListener() {
-				public void actionPerformed(java.awt.event.ActionEvent evt) {
+		btnReservar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {
 					btnReservarActionPerformed(evt);
 				}
 			});
-		javax.swing.GroupLayout layout = new
-		javax.swing.GroupLayout(getContentPane());
+		GroupLayout layout = new GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jSeparator1).addComponent(jSeparator2,
-				javax.swing.GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addGap(21,
+		layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jSeparator1).addComponent(jSeparator2,
+				GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addGap(21,
 					21,
-					21).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(lblFechaReserva).addComponent(lblCantidad)).addGap(18,
+					21).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(lblFechaReserva).addComponent(lblCantidad)).addGap(18,
 							18,
-							18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+							18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
 								false).addComponent(tfFechaReserva).addComponent(tfCantidad,
-								javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)).addGap(18,
-							18, 18).addComponent(btnReservar,
-							javax.swing.GroupLayout.PREFERRED_SIZE, 90,
-							javax.swing.GroupLayout.PREFERRED_SIZE).addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-							Short.MAX_VALUE)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
+								GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)).addGap(18, 18,
+							18).addComponent(btnReservar, GroupLayout.PREFERRED_SIZE, 90,
+							GroupLayout.PREFERRED_SIZE).addContainerGap(GroupLayout.DEFAULT_SIZE,
+							Short.MAX_VALUE)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
 								false).addGroup(layout.createSequentialGroup().addComponent(lblCostoTotal).addGap(60,
 									60, 60).addComponent(tfCostoTotal).addGap(106, 106,
-									106)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(lblDescripcion).addComponent(lblPelicula).addComponent(lblCantidadDisponible).addComponent(lblIdentificacion).addComponent(lblNombre).addComponent(lblApellidos).addComponent(lblPrecio)).addGap(18,
+									106)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(lblDescripcion).addComponent(lblPelicula).addComponent(lblCantidadDisponible).addComponent(lblIdentificacion).addComponent(lblNombre).addComponent(lblApellidos).addComponent(lblPrecio)).addGap(18,
 									18,
-									18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+									18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING,
 												false).addComponent(tfNombre,
-												javax.swing.GroupLayout.Alignment.LEADING).addComponent(tfApellidos,
-												javax.swing.GroupLayout.Alignment.LEADING,
-												javax.swing.GroupLayout.DEFAULT_SIZE, 90,
+												GroupLayout.Alignment.LEADING).addComponent(tfApellidos,
+												GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 90,
 												Short.MAX_VALUE).addComponent(tfIdentificacion,
-												javax.swing.GroupLayout.Alignment.LEADING)).addGap(18, 18,
-											18).addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE,
-											90,
-											javax.swing.GroupLayout.PREFERRED_SIZE)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+												GroupLayout.Alignment.LEADING)).addGap(18, 18,
+											18).addComponent(btnBuscar, GroupLayout.PREFERRED_SIZE, 90,
+											GroupLayout.PREFERRED_SIZE)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING,
 												false).addComponent(tfPrecio,
-												javax.swing.GroupLayout.Alignment.LEADING).addComponent(cbxPeliculas,
-												javax.swing.GroupLayout.Alignment.LEADING, 0, 90,
+												GroupLayout.Alignment.LEADING).addComponent(cbxPeliculas,
+												GroupLayout.Alignment.LEADING, 0, 90,
 												Short.MAX_VALUE).addComponent(tfCantidadDisponible,
-												javax.swing.GroupLayout.Alignment.LEADING).addComponent(tfDescripcion,
-												javax.swing.GroupLayout.Alignment.LEADING)).addGap(18, 18,
+												GroupLayout.Alignment.LEADING).addComponent(tfDescripcion,
+												GroupLayout.Alignment.LEADING)).addGap(18, 18,
 											18).addComponent(btnSeleccionar))))).addGap(0, 81,
 							Short.MAX_VALUE)))));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblIdentificacion,
-						javax.swing.GroupLayout.PREFERRED_SIZE, 14,
-						javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(tfIdentificacion,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jButton1)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(tfNombre,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(lblNombre)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(lblApellidos).addComponent(tfApellidos,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jSeparator2,
-					javax.swing.GroupLayout.PREFERRED_SIZE, 9,
-					javax.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblPelicula).addComponent(cbxPeliculas,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(btnSeleccionar)).addGap(18,
-					18,
-					18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblDescripcion).addComponent(tfDescripcion,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
-					18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblCantidadDisponible).addComponent(tfCantidadDisponible,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
-					18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblPrecio).addComponent(tfPrecio,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(5, 5,
-					5).addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE,
-					javax.swing.GroupLayout.DEFAULT_SIZE,
-					javax.swing.GroupLayout.PREFERRED_SIZE).addGap(14, 14,
-					14).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblFechaReserva).addComponent(tfFechaReserva,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(btnReservar)).addGap(18,
-					18,
-					18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblCantidad).addComponent(tfCantidad,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
-					18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(lblCostoTotal).addComponent(tfCostoTotal,
-						javax.swing.GroupLayout.PREFERRED_SIZE,
-						javax.swing.GroupLayout.DEFAULT_SIZE,
-						javax.swing.GroupLayout.PREFERRED_SIZE)).addContainerGap(13,
-					Short.MAX_VALUE)));
+		layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblIdentificacion,
+						GroupLayout.PREFERRED_SIZE, 14,
+						GroupLayout.PREFERRED_SIZE).addComponent(tfIdentificacion,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE).addComponent(btnBuscar)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(tfNombre,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE).addComponent(lblNombre)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(lblApellidos).addComponent(tfApellidos,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(jSeparator2,
+					GroupLayout.PREFERRED_SIZE, 9,
+					GroupLayout.PREFERRED_SIZE).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblPelicula).addComponent(cbxPeliculas,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE).addComponent(btnSeleccionar)).addGap(18, 18,
+					18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblDescripcion).addComponent(tfDescripcion,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
+					18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblCantidadDisponible).addComponent(tfCantidadDisponible,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
+					18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblPrecio).addComponent(tfPrecio,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)).addGap(5, 5, 5).addComponent(jSeparator1,
+					GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+					GroupLayout.PREFERRED_SIZE).addGap(14, 14,
+					14).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblFechaReserva).addComponent(tfFechaReserva,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE).addComponent(btnReservar)).addGap(18, 18,
+					18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblCantidad).addComponent(tfCantidad,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
+					18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblCostoTotal).addComponent(tfCostoTotal,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.PREFERRED_SIZE)).addContainerGap(13, Short.MAX_VALUE)));
 		pack();
 	}
-	private void cbxPeliculasActionPerformed(java.awt.event.ActionEvent evt) {
+	private void cbxPeliculasActionPerformed(ActionEvent evt) {
 	}
-	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+	private void btnBuscarActionPerformed(ActionEvent evt) {
 	}
-	private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {
+	private void btnSeleccionarActionPerformed(ActionEvent evt) {
 		System.out.println(cbxPeliculas.getSelectedItem());
 	}
-	private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {
+	private void btnReservarActionPerformed(ActionEvent evt) {
 	}
-	private javax.swing.JButton btnReservar;
-	private javax.swing.JButton btnSeleccionar;
-	private javax.swing.JComboBox cbxPeliculas;
-	private javax.swing.JButton jButton1;
-	private javax.swing.JSeparator jSeparator1;
-	private javax.swing.JSeparator jSeparator2;
-	private javax.swing.JLabel lblApellidos;
-	private javax.swing.JLabel lblCantidad;
-	private javax.swing.JLabel lblCantidadDisponible;
-	private javax.swing.JLabel lblCostoTotal;
-	private javax.swing.JLabel lblDescripcion;
-	private javax.swing.JLabel lblFechaReserva;
-	private javax.swing.JLabel lblIdentificacion;
-	private javax.swing.JLabel lblNombre;
-	private javax.swing.JLabel lblPelicula;
-	private javax.swing.JLabel lblPrecio;
-	private javax.swing.JTextField tfApellidos;
-	private javax.swing.JTextField tfCantidad;
-	private javax.swing.JTextField tfCantidadDisponible;
-	private javax.swing.JTextField tfCostoTotal;
-	private javax.swing.JTextField tfDescripcion;
-	private javax.swing.JTextField tfFechaReserva;
-	private javax.swing.JTextField tfIdentificacion;
-	private javax.swing.JTextField tfNombre;
-	private javax.swing.JTextField tfPrecio;
 }
