@@ -17,7 +17,7 @@ SPL FooReservasGenericas {
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
 		dIndexVuelos, dAgregarVueloUI, dAgregarReservaVueloUI,
-		dConexion, dConfig, dConfigVuelos	
+		dConexion, dConfig, dConfigVuelos 	
 	}  
          
 	Constraints { 
@@ -55,8 +55,9 @@ SPL FooReservasGenericas {
 		{dAgregarReservaUI} when (AgregarReservaUI); 
 		 
 		{dIndexVuelos} when (IndexVuelos);
-		{dAgregarVueloUI} when (AgregarVueloUI);
-		{dAgregarReservaVueloUI} when (AgregarReservaVueloUI);
+		{dAgregarVueloUI} when (AgregarVueloUI); 
+		{dAgregarReservaVueloUI} when (AgregarReservaVueloUI); 
+		
 		
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config);
@@ -79,7 +80,7 @@ SPL FooReservasGenericas {
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, BuscarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
-			IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI,
+			IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI,AgregarClienteUI,
 			Conexion, ConfigVuelos
 		};      		 
 	}
