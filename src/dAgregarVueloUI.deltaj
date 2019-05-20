@@ -1,6 +1,6 @@
 delta dAgregarVueloUI {
 	adds{
-		package com.eafit.reservapeliculas.vistas;
+		package com.eafit.reservasgenericas.vistas;
 
 		public class AgregarVueloGUI extends javax.swing.JFrame {
 
@@ -29,7 +29,7 @@ delta dAgregarVueloUI {
 		
 		        lblNombre.setText("Destino");
 		
-		        lblDescripcion.setText("Descripción");
+		        lblDescripcion.setText("Descripciï¿½n");
 		
 		        lblGenero.setText("Clase");
 		

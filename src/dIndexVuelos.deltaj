@@ -2,7 +2,7 @@ delta dIndexVuelos {
 	adds{
 		package com.eafit.reservasgenericas.vistas;
 
-		import javax.swing.*;
+		import javax.swing.*; 
 		import java.awt.EventQueue;
 		import java.awt.event.*;
 		import java.util.logging.Level;
@@ -72,15 +72,15 @@ delta dIndexVuelos {
 		        pack();
 		    }// </editor-fold>                        
 		
-		    private void registrarPeliculasActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+		    private void registrarVueloActionPerformed(java.awt.event.ActionEvent evt) {                                                   
 		        // TODO add your handling code here:
-		        AgregarPeliculaGUI agregarPeliculaGUI = new AgregarPeliculaGUI();
-		        agregarPeliculaGUI.setVisible(true);
+		        AgregarVueloGUI agregarVueloGUI = new AgregarVueloGUI();
+		        agregarVueloGUI.setVisible(true);
 		    }                                                  
 		
-		    private void reservarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+		    private void reservarVueloActionPerformed(java.awt.event.ActionEvent evt) {                                                 
 		        // TODO add your handling code here:
-		        AgregarReservaPeliculaGUI agregarReservaGUI = new AgregarReservaPeliculaGUI();
+		        AgregarVueloGUI agregarReservaGUI = new AgregarVueloGUI();
 		        agregarReservaGUI.setVisible(true);
 		    }                                                
 		
