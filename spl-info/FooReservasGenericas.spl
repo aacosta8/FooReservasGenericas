@@ -19,7 +19,7 @@ SPL FooReservasGenericas {
 		dIndexVuelos, dAgregarVueloUI, dAgregarReservaVueloUI,
 		dConexion, dConfig, dConfigVuelos	
 	}  
-        
+         
 	Constraints { 
 		// Put boolean expression representation of the feature model here. 
 	} 
