@@ -16,7 +16,7 @@ SPL FooReservasGenericas {
 		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dBuscarProducto, dProducto, dProductoDAO,
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
-		dIndexVuelos, dAgregarVueloUI,dAgregarReservaVueloUI,
+		dIndexVuelos, dAgregarVueloUI, dAgregarReservaVueloUI,
 		dConexion, dConfig, dConfigVuelos	
 	}  
         
@@ -57,10 +57,11 @@ SPL FooReservasGenericas {
 		{dIndexVuelos} when (IndexVuelos);
 		{dAgregarVueloUI} when (AgregarVueloUI);
 		{dAgregarReservaVueloUI} when (AgregarReservaVueloUI);
+		
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config);
 		{dConfigVuelos} when (ConfigVuelos); 
-	}           
+	}             
                     
 	Products {     
 		// Put product definitions here.
@@ -71,17 +72,16 @@ SPL FooReservasGenericas {
 			AgregarReserva, Reserva, ReservaDAO,
 			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 			Conexion, Config
-		};
-		
+		};  
+		 
 		vuelos_v10 = 
 		{
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, BuscarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
-			IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI, 
+			IndexVuelos, AgregarVueloUI,
 			Conexion, ConfigVuelos
-		};      
-				
+		};      		
 	}
 }
     

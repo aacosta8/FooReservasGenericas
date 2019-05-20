@@ -222,10 +222,8 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	private void btnReservarActionPerformed(ActionEvent evt) {
 		Date fechaReserva = new Date(System.currentTimeMillis());
 		Date fechaUso = new Date(System.currentTimeMillis());
-		int cantidad = Integer.valueOf(tfCantidad.getText());
-		
-		float costoTotal = cantidad *producto.getPrecio();
-		tfPrecio.setText(String.valueOf(costoTotal));
+		int cantidad = 1;
+		float costoTotal = 1;
 		adminReservas.agregar(fechaReserva, fechaUso, cantidad, costoTotal, cliente,
 			producto);
 	}
