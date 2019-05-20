@@ -2,6 +2,8 @@ package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.vistas;
 
 import java.awt.event.*;
 import javax.swing.*;
+import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminProductos;
 /*** added by dAgregarPeliculaUI
  */
 @SuppressWarnings("serial")
@@ -76,5 +78,17 @@ public class AgregarPeliculaGUI extends JFrame {
 		pack();
 	}
 	private void btnGuardarActionPerformed(ActionEvent evt) {
+		AdminProductos adminProductos = new AdminProductos();
+		String nombre = tfNombre.getText();
+		String descripcion = tfDescripcion.getText();
+		float precio = Float.valueOf(tfPrecio.getText());
+		int cantidadDisponible = Integer.valueOf(tfCantidad.getText());
+		String tipo = tfGenero.getText();
+		try {
+			adminProductos.agregar(nombre, descripcion, precio, cantidadDisponible,
+				tipo);
+		}
+		catch(Exception e) {
+		}
 	}
 }

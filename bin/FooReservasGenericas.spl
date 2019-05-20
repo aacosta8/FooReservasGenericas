@@ -8,7 +8,7 @@ SPL FooReservasGenericas {
 		IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 		Conexion, Config
 	} 
- 
+    
 	Deltas = 
 	{     
 		dAdminReservas, dAgregarReserva, dModificarReserva, dEliminarReserva, dListarReservas, dReserva, dReservaDAO,
@@ -18,7 +18,7 @@ SPL FooReservasGenericas {
 		dConexion, dConfig	
 	}  
   
-	Constraints {
+	Constraints { 
 		// Put boolean expression representation of the feature model here. 
 	} 
     
@@ -54,7 +54,7 @@ SPL FooReservasGenericas {
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
 	}          
-                  
+                   
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
@@ -62,8 +62,8 @@ SPL FooReservasGenericas {
 			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, Producto, ProductoDAO, 
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
-			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI,
+			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 			Conexion, Config
 		};      
-	}   
+	}    
 }     

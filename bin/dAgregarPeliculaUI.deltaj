@@ -8,8 +8,10 @@ delta dAgregarPeliculaUI {
 	
 	adds{
 		package com.eafit.reservasgenericas.vistas;
+		
 		import java.awt.event.*;
 		import javax.swing.*;
+		import com.eafit.reservasgenericas.gestion.AdminProductos;
 		
 		@SuppressWarnings("serial")
 		public class AgregarPeliculaGUI extends JFrame {
@@ -91,6 +93,18 @@ delta dAgregarPeliculaUI {
 				pack();
 			}
 			private void btnGuardarActionPerformed(ActionEvent evt) {
+				AdminProductos adminProductos = new AdminProductos();
+				String nombre = tfNombre.getText();
+				String descripcion = tfDescripcion.getText();
+				float precio = Float.valueOf(tfPrecio.getText());
+				int cantidadDisponible = Integer.valueOf(tfCantidad.getText());
+				String tipo = tfGenero.getText();
+				
+				try {
+					adminProductos.agregar(nombre, descripcion, precio, cantidadDisponible, tipo);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 			}
 		}
 	}
