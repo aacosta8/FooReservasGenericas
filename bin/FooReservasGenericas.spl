@@ -7,17 +7,17 @@ SPL FooReservasGenericas {
 		AdminClientes, AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 		IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 		Conexion, Config
-	} 
+	}   
      
 	Deltas = 
-	{     
+	{       
 		dAdminReservas, dAgregarReserva, dModificarReserva, dEliminarReserva, dListarReservas, dReserva, dReservaDAO,
 		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dBuscarProducto, dProducto, dProductoDAO,
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
 		dConexion, dConfig	
 	}  
-       
+        
 	Constraints { 
 		// Put boolean expression representation of the feature model here. 
 	} 

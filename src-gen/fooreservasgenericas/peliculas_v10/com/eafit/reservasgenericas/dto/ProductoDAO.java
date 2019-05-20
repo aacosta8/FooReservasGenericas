@@ -134,8 +134,10 @@ public class ProductoDAO {
 		try {
 			conn = Conexion.getConexion();
 			String query =
-			"SELECT idProducto, nombre, descripcion, precio, cantidadDisponible, tipo FROM producto WHERE idProducto = 1";
-			rs = ps.executeQuery(query);
+			"SELECT idProducto, nombre, descripcion, precio, cantidadDisponible, tipo FROM producto WHERE idProducto = "
+			+ idProducto;
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
 			while(rs.next()) {
 				producto.setIdProducto(rs.getInt(1));
 				producto.setNombre(rs.getString(2));

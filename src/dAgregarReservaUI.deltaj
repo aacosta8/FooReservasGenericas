@@ -13,11 +13,12 @@ delta dAgregarReservaUI {
 		import java.awt.event.*;
 		import java.util.List;
 		
+		import com.eafit.reservasgenericas.modelos.Cliente;
 		import com.eafit.reservasgenericas.modelos.Producto;
 		import com.eafit.reservasgenericas.gestion.AdminProductos;
 		import com.eafit.reservasgenericas.gestion.AdminClientes;
-		
-		
+		/*** added by dAgregarReservaUI
+		 */
 		@SuppressWarnings("serial")
 		public class AgregarReservaPeliculaGUI extends JFrame {
 			private JButton btnReservar;
@@ -49,6 +50,8 @@ delta dAgregarReservaUI {
 			AdminClientes adminClientes = new AdminClientes();
 			List<Producto> productos;
 			Producto producto = new Producto();
+			Cliente cliente = new Cliente();
+			
 			@SuppressWarnings("unchecked")
 			public AgregarReservaPeliculaGUI() {
 				initComponents();
@@ -195,16 +198,25 @@ delta dAgregarReservaUI {
 			private void cbxPeliculasActionPerformed(ActionEvent evt) {
 			}
 			private void btnBuscarActionPerformed(ActionEvent evt) {
+				try {
+					cliente = adminClientes.buscar(Integer.valueOf(tfIdentificacion.getText()));
+					tfNombre.setText(cliente.getNombre());
+					tfApellidos.setText(cliente.getApellidos());
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
 			}
 			private void btnSeleccionarActionPerformed(ActionEvent evt) {
 				try {
 					producto = adminProductos.buscar(1);
 					tfDescripcion.setText(producto.getDescripcion());
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
+					tfCantidadDisponible.setText(String.valueOf(producto.getCantidadDisponible()));
+					tfPrecio.setText(String.valueOf(producto.getPrecio()));
+				}
+				catch(Exception e) {
 					e.printStackTrace();
 				}
-				System.out.println(cbxPeliculas.getSelectedItem());
 			}
 			private void btnReservarActionPerformed(ActionEvent evt) {
 			}

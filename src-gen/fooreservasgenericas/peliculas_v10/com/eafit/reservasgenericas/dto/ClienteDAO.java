@@ -48,8 +48,10 @@ public class ClienteDAO {
 		try {
 			conn = Conexion.getConexion();
 			String query =
-			"SELECT numeroID, nombre, apellidos FROM cliente WHERE numeroID = ?";
-			rs = ps.executeQuery(query);
+			"SELECT numeroID, nombre, apellidos FROM cliente WHERE numeroID = " +
+			numeroID;
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
 			while(rs.next()) {
 				cliente.setNumeroID(rs.getInt(1));
 				cliente.setNombre(rs.getString(2));

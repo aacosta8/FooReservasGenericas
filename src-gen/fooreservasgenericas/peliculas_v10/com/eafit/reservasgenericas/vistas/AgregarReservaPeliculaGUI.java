@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.List;
 import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Cliente;
+import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Producto;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminProductos;
@@ -42,6 +44,7 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	AdminClientes adminClientes = new AdminClientes();
 	List<Producto> productos;
 	Producto producto = new Producto();
+	Cliente cliente = new Cliente();
 	@SuppressWarnings("unchecked")
 	public AgregarReservaPeliculaGUI() {
 		initComponents();
@@ -188,16 +191,26 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	private void cbxPeliculasActionPerformed(ActionEvent evt) {
 	}
 	private void btnBuscarActionPerformed(ActionEvent evt) {
+		try {
+			cliente =
+			adminClientes.buscar(Integer.valueOf(tfIdentificacion.getText()));
+			tfNombre.setText(cliente.getNombre());
+			tfApellidos.setText(cliente.getApellidos());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	private void btnSeleccionarActionPerformed(ActionEvent evt) {
 		try {
 			producto = adminProductos.buscar(1);
 			tfDescripcion.setText(producto.getDescripcion());
+			tfCantidadDisponible.setText(String.valueOf(producto.getCantidadDisponible()));
+			tfPrecio.setText(String.valueOf(producto.getPrecio()));
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(cbxPeliculas.getSelectedItem());
 	}
 	private void btnReservarActionPerformed(ActionEvent evt) {
 	}
