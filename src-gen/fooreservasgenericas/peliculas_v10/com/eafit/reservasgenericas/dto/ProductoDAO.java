@@ -12,7 +12,7 @@ import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
 /*** added by dProductoDAO* modified by dAgregarProducto* modified by
 dModificarProducto* modified by dEliminarProducto* modified by
-dListarProductos
+dListarProductos* modified by dBuscarProducto
  */
 public class ProductoDAO {
 	Statement st = null;
@@ -126,5 +126,36 @@ public class ProductoDAO {
 			}
 		}
 		return resultado;
+	}
+	/*** added by dBuscarProducto
+	 */
+	public Producto buscar(int idProducto) {
+		Producto producto = new Producto();
+		try {
+			conn = Conexion.getConexion();
+			String query =
+			"SELECT idProducto, nombre, descripcion, precio, cantidadDisponible, tipo FROM producto WHERE idProducto = ?";
+			rs = ps.executeQuery(query);
+			while(rs.next()) {
+				producto.setIdProducto(rs.getInt(1));
+				producto.setNombre(rs.getString(2));
+				producto.setDescripcion(rs.getString(3));
+				producto.setPrecio(rs.getFloat(4));
+				producto.setCantidadDisponible(rs.getInt(5));
+				producto.setTipo(rs.getString(6));
+			}
+			return producto;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn.close();
+			}
+			catch(Exception e) {
+			}
+		}
+		return producto;
 	}
 }

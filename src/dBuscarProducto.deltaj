@@ -21,7 +21,7 @@ delta dBuscarProducto {
 					producto.setCantidadDisponible(rs.getInt(5));
 					producto.setTipo(rs.getString(6));
 	            }
-				return Producto;
+				return producto;
 			}
 			catch(Exception e) {
 				e.printStackTrace();
@@ -33,7 +33,7 @@ delta dBuscarProducto {
 				catch(Exception e) {
 				}
 			}
-			return Producto;
+			return producto;
 		}
 	}
 }

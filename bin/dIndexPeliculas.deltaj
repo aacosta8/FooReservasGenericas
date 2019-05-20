@@ -66,9 +66,6 @@ delta dIndexPeliculas {
 							Short.MAX_VALUE)));
 				pack();
 			}
-		    private void reservarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-
-    		}       
 			
 			public static void main(String args []) {
 				try {

@@ -7,7 +7,7 @@ import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto.ProductoDAO;
 /*** added by dAdminProductos* modified by dAgregarProducto* modified by
 dModificarProducto* modified by dEliminarProducto* modified by
-dListarProductos
+dListarProductos* modified by dBuscarProducto
  */
 public class AdminProductos {
 	ProductoDAO productoDAO = new ProductoDAO();
@@ -48,5 +48,10 @@ public class AdminProductos {
 	 */
 	public List<Producto> listar() throws Exception {
 		return productoDAO.listar();
+	}
+	/*** added by dBuscarProducto
+	 */
+	public Producto buscar(int idProducto) throws Exception {
+		return productoDao.buscar(idProducto);
 	}
 }
