@@ -55,7 +55,6 @@ public class ClienteDAO {
 				cliente.setNombre(rs.getString(2));
 				cliente.setApellidos(rs.getString(3));
 			}
-			return cliente;
 		}
 		catch(Exception e) {
 			e.printStackTrace();

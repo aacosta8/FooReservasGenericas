@@ -7,6 +7,8 @@ import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Producto;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminProductos;
+import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminClientes;
 /*** added by dAgregarReservaUI
  */
 @SuppressWarnings("serial")
@@ -37,7 +39,9 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	private JTextField tfNombre;
 	private JTextField tfPrecio;
 	AdminProductos adminProductos = new AdminProductos();
+	AdminClientes adminClientes = new AdminClientes();
 	List<Producto> productos;
+	Producto producto = new Producto();
 	@SuppressWarnings("unchecked")
 	public AgregarReservaPeliculaGUI() {
 		initComponents();
@@ -186,6 +190,13 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	private void btnBuscarActionPerformed(ActionEvent evt) {
 	}
 	private void btnSeleccionarActionPerformed(ActionEvent evt) {
+		try {
+			producto = adminProductos.buscar(1);
+			tfDescripcion.setText(producto.getDescripcion());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		System.out.println(cbxPeliculas.getSelectedItem());
 	}
 	private void btnReservarActionPerformed(ActionEvent evt) {

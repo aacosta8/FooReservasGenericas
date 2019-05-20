@@ -15,10 +15,11 @@ delta dAgregarReservaUI {
 		
 		import com.eafit.reservasgenericas.modelos.Producto;
 		import com.eafit.reservasgenericas.gestion.AdminProductos;
+		import com.eafit.reservasgenericas.gestion.AdminClientes;
+		
 		
 		@SuppressWarnings("serial")
 		public class AgregarReservaPeliculaGUI extends JFrame {
-			
 			private JButton btnReservar;
 			private JButton btnSeleccionar;
 			private JComboBox cbxPeliculas;
@@ -44,24 +45,25 @@ delta dAgregarReservaUI {
 			private JTextField tfIdentificacion;
 			private JTextField tfNombre;
 			private JTextField tfPrecio;
-			
 			AdminProductos adminProductos = new AdminProductos();
+			AdminClientes adminClientes = new AdminClientes();
 			List<Producto> productos;
-			
+			Producto producto = new Producto();
 			@SuppressWarnings("unchecked")
 			public AgregarReservaPeliculaGUI() {
 				initComponents();
 				try {
 					productos = adminProductos.listar();
-				} catch (Exception e) {
+				}
+				catch(Exception e) {
 					e.printStackTrace();
 				}
-				
-				for(int i = 0; i < productos.size(); i ++) {
+				for(int i = 0;
+					i < productos.size();
+					i ++) {
 					cbxPeliculas.addItem(productos.get(i).getNombre());
 				}
 			}
-			
 			private void initComponents() {
 				lblPelicula = new JLabel();
 				jSeparator1 = new JSeparator();
@@ -122,8 +124,7 @@ delta dAgregarReservaUI {
 							btnReservarActionPerformed(evt);
 						}
 					});
-				GroupLayout layout = new
-				GroupLayout(getContentPane());
+				GroupLayout layout = new GroupLayout(getContentPane());
 				getContentPane().setLayout(layout);
 				layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jSeparator1).addComponent(jSeparator2,
 						GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addGap(21,
@@ -132,9 +133,8 @@ delta dAgregarReservaUI {
 									18,
 									18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
 										false).addComponent(tfFechaReserva).addComponent(tfCantidad,
-										GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)).addGap(18,
-									18, 18).addComponent(btnReservar,
-									GroupLayout.PREFERRED_SIZE, 90,
+										GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)).addGap(18, 18,
+									18).addComponent(btnReservar, GroupLayout.PREFERRED_SIZE, 90,
 									GroupLayout.PREFERRED_SIZE).addContainerGap(GroupLayout.DEFAULT_SIZE,
 									Short.MAX_VALUE)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
 										false).addGroup(layout.createSequentialGroup().addComponent(lblCostoTotal).addGap(60,
@@ -144,12 +144,10 @@ delta dAgregarReservaUI {
 											18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING,
 														false).addComponent(tfNombre,
 														GroupLayout.Alignment.LEADING).addComponent(tfApellidos,
-														GroupLayout.Alignment.LEADING,
-														GroupLayout.DEFAULT_SIZE, 90,
+														GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 90,
 														Short.MAX_VALUE).addComponent(tfIdentificacion,
 														GroupLayout.Alignment.LEADING)).addGap(18, 18,
-													18).addComponent(btnBuscar, GroupLayout.PREFERRED_SIZE,
-													90,
+													18).addComponent(btnBuscar, GroupLayout.PREFERRED_SIZE, 90,
 													GroupLayout.PREFERRED_SIZE)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING,
 														false).addComponent(tfPrecio,
 														GroupLayout.Alignment.LEADING).addComponent(cbxPeliculas,
@@ -162,50 +160,36 @@ delta dAgregarReservaUI {
 				layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblIdentificacion,
 								GroupLayout.PREFERRED_SIZE, 14,
 								GroupLayout.PREFERRED_SIZE).addComponent(tfIdentificacion,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE).addComponent(btnBuscar)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(tfNombre,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE).addComponent(lblNombre)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(lblApellidos).addComponent(tfApellidos,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(jSeparator2,
 							GroupLayout.PREFERRED_SIZE, 9,
 							GroupLayout.PREFERRED_SIZE).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblPelicula).addComponent(cbxPeliculas,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE).addComponent(btnSeleccionar)).addGap(18,
-							18,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE).addComponent(btnSeleccionar)).addGap(18, 18,
 							18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblDescripcion).addComponent(tfDescripcion,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
 							18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblCantidadDisponible).addComponent(tfCantidadDisponible,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
 							18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblPrecio).addComponent(tfPrecio,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)).addGap(5, 5,
-							5).addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE,
-							GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)).addGap(5, 5, 5).addComponent(jSeparator1,
+							GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 							GroupLayout.PREFERRED_SIZE).addGap(14, 14,
 							14).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblFechaReserva).addComponent(tfFechaReserva,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE).addComponent(btnReservar)).addGap(18,
-							18,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE).addComponent(btnReservar)).addGap(18, 18,
 							18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblCantidad).addComponent(tfCantidad,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)).addGap(18, 18,
 							18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lblCostoTotal).addComponent(tfCostoTotal,
-								GroupLayout.PREFERRED_SIZE,
-								GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)).addContainerGap(13,
-							Short.MAX_VALUE)));
+								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)).addContainerGap(13, Short.MAX_VALUE)));
 				pack();
 			}
 			private void cbxPeliculasActionPerformed(ActionEvent evt) {
@@ -213,6 +197,13 @@ delta dAgregarReservaUI {
 			private void btnBuscarActionPerformed(ActionEvent evt) {
 			}
 			private void btnSeleccionarActionPerformed(ActionEvent evt) {
+				try {
+					producto = adminProductos.buscar(1);
+					tfDescripcion.setText(producto.getDescripcion());
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println(cbxPeliculas.getSelectedItem());
 			}
 			private void btnReservarActionPerformed(ActionEvent evt) {

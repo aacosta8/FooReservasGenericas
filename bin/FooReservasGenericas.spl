@@ -54,8 +54,8 @@ SPL FooReservasGenericas {
 		 
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
-	}          
-                 
+	}           
+                  
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
