@@ -6,7 +6,8 @@ SPL FooReservasGenericas {
 		AdminProductos, AgregarProducto, ModificarProducto, EliminarProducto, ListarProductos, BuscarProducto, Producto, ProductoDAO,
 		AdminClientes, AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 		IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
-		Conexion, Config
+		IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI, 
+		Conexion, Config, ConfigVuelos
 	}   
      
 	Deltas = 
@@ -15,7 +16,8 @@ SPL FooReservasGenericas {
 		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dBuscarProducto, dProducto, dProductoDAO,
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
 		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
-		dConexion, dConfig	
+		dIndexVuelos, dAgregarVueloUI,dAgregarReservaVueloUI,
+		dConexion, dConfig, dConfigVuelos	
 	}  
         
 	Constraints { 
@@ -42,8 +44,8 @@ SPL FooReservasGenericas {
 		{dProductoDAO} when (ProductoDAO);
 		
 		{dAdminClientes} when (AdminClientes);
-		{dAdminClientes, dClienteDAO, dAgregarCliente} when (AgregarCliente);
-		{dAdminClientes, dClienteDAO, dBuscarCliente} when (BuscarCliente);
+		{dAdminClientes, dClienteDAO , dAgregarCliente} when (AgregarCliente);
+		{dAdminClientes, dClienteDAO, dBuscarCliente } when (BuscarCliente);
 		{dCliente} when (Cliente);
 		{dClienteDAO} when (ClienteDAO);
 		    
@@ -52,8 +54,12 @@ SPL FooReservasGenericas {
 		{dAgregarPeliculaUI} when (AgregarPeliculaUI); 
 		{dAgregarReservaUI} when (AgregarReservaUI); 
 		 
+		{dIndexVuelos} when (IndexVuelos);
+		{dAgregarVueloUI} when (AgregarVueloUI);
+		{dAgregarReservaVueloUI} when (AgregarReservaVueloUI);
 		{dConexion} when (Conexion); 
-		{dConfig} when (Config); 
+		{dConfig} when (Config);
+		{dConfigVuelos} when (ConfigVuelos); 
 	}           
                   
 	Products {     
@@ -65,6 +71,17 @@ SPL FooReservasGenericas {
 			AgregarReserva, Reserva, ReservaDAO,
 			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 			Conexion, Config
+		};
+		
+		vuelos_v10 = 
+		{
+			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, BuscarProducto, Producto, ProductoDAO, 
+			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
+			AgregarReserva, Reserva, ReservaDAO,
+			IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI, 
+			Conexion, ConfigVuelos
 		};      
-	}    
-}     
+				
+	}
+}
+    
