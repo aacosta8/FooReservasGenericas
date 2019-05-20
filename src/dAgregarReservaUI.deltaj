@@ -13,8 +13,8 @@ delta dAgregarReservaUI {
 		import java.awt.event.*;
 		import java.util.List;
 		
-		import fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
-		import fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.*;
+		import com.eafit.reservasgenericas.modelos.Producto;
+		import com.eafit.reservasgenericas.gestion.AdminProductos;
 		
 		@SuppressWarnings("serial")
 		public class AgregarReservaPeliculaGUI extends JFrame {
@@ -58,7 +58,7 @@ delta dAgregarReservaUI {
 				}
 				
 				for(int i = 0; i < productos.size(); i ++) {
-					cbxPeliculas.addItem(productos.get(0).getNombre());
+					cbxPeliculas.addItem(productos.get(i).getNombre());
 				}
 			}
 			

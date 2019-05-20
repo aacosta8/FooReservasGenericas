@@ -7,7 +7,7 @@ import java.sql.Statement;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Reserva;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Reserva;
 /*** added by dReservaDAO* modified by dAgregarReserva
  */
 public class ReservaDAO {

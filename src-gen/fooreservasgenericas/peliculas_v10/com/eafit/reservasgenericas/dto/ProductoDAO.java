@@ -9,7 +9,7 @@ import java.util.List;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.bd.Conexion;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Producto;
 /*** added by dProductoDAO* modified by dAgregarProducto* modified by
 dModificarProducto* modified by dEliminarProducto* modified by
 dListarProductos* modified by dBuscarProducto

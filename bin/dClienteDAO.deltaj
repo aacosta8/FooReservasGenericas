@@ -7,7 +7,7 @@ delta dClienteDAO {
 		import java.sql.ResultSet;
 		import java.sql.Statement;
 		import com.eafit.reservasgenericas.bd.Conexion;
-		import com.eafit.reservasenericas.modelos.Cliente;
+		import com.eafit.reservasgenericas.modelos.Cliente;
 		
 		public class ClienteDAO {
 			Statement st = null;

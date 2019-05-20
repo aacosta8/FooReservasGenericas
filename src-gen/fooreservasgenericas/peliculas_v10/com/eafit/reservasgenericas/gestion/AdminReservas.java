@@ -2,11 +2,11 @@ package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion;
 
 import java.util.Date;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Cliente;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Cliente;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Producto;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Reserva;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Reserva;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto.ReservaDAO;
 /*** added by dAdminReservas* modified by dAgregarReserva

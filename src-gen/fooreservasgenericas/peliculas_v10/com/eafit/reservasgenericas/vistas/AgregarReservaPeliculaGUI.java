@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.List;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Producto;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.*;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminProductos;
 /*** added by dAgregarReservaUI
  */
 @SuppressWarnings("serial")
@@ -50,7 +50,7 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 		for(int i = 0;
 			i < productos.size();
 			i ++) {
-			cbxPeliculas.addItem(productos.get(0).getNombre());
+			cbxPeliculas.addItem(productos.get(i).getNombre());
 		}
 	}
 	private void initComponents() {

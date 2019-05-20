@@ -2,7 +2,7 @@ package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion;
 
 import java.util.List;
 import
-fooreservasgenericas.peliculas_v10.com.eafit.reservasenericas.modelos.Producto;
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Producto;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.dto.ProductoDAO;
 /*** added by dAdminProductos* modified by dAgregarProducto* modified by

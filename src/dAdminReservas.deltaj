@@ -3,9 +3,9 @@ delta dAdminReservas {
 		package com.eafit.reservasgenericas.gestion;
 		
 		import java.util.Date;
-		import com.eafit.reservasenericas.modelos.Cliente;
-		import com.eafit.reservasenericas.modelos.Producto;
-		import com.eafit.reservasenericas.modelos.Reserva;
+		import com.eafit.reservasgenericas.modelos.Cliente;
+		import com.eafit.reservasgenericas.modelos.Producto;
+		import com.eafit.reservasgenericas.modelos.Reserva;
 		import com.eafit.reservasgenericas.dto.ReservaDAO;
 		
 		public class AdminReservas{

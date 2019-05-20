@@ -1,6 +1,6 @@
 delta dProducto {
 	adds{
-		package com.eafit.reservasenericas.modelos;
+		package com.eafit.reservasgenericas.modelos;
 		
 		public class Producto {
 			
