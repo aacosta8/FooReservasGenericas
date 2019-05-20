@@ -1,2 +1,44 @@
 delta dModificarReserva {
+	modifies com.eafit.reservasgenericas.gestion.AdminReservas{
+		adds public void modificar(int idReserva, Date fechaReserva, Date fechaUso, int cantidad
+								   ,float costoTotal, Cliente cliente, Producto producto) throws Exception {
+
+			Reserva reserva = new Reserva();
+			reserva.setIdReserva(idReserva);
+			reserva.setFechaReserva(fechaReserva);
+			reserva.setFechaUso(fechaUso);
+			reserva.setCantidad(cantidad);
+			reserva.setCostoTotal(costoTotal);
+			reserva.setCliente(cliente);
+			reserva.setProducto(producto);
+			reservaDAO.modificar(reserva);
+		}
+	}
+
+	modifies com.eafit.reservasgenericas.dto.ReservaDAO{
+		adds public void modificar(Reserva reserva){
+			try {
+				conn = Conexion.getConexion();
+				String query = "UPDATE reserva set fechaReserva=?, fechaUso=?,
+				 								cantidad=?, costoTotal=?,numeroIDCliente=?,idProducto=?  WHERE idReserva=?";
+				ps = conn.prepareStatement(query);
+				java.sql.Date sqlFechaReserva = new java.sql.Date(reserva.getFechaReserva()); 
+				ps.setDate(1, sqlFechaReserva);
+				java.sql.Date sqlFechaUso = new java.sql.Date(reserva.getFechaUso()); 
+				ps.setDate(2,sqlFechaUso);
+				ps.setInt(3, reserva.getCantidad());
+				ps.setFloat(4, reserva.getCostoTotal());
+				ps.setInt(5, reserva.getCliente.getNumeroID());
+				ps.setInt(6, reserva.getProducto.getIdProducto());
+				ps.setInt(6, reserva.getIdReserva());
+				ps.executeUpdate();
+			}
+			catch(Exception e){ e.printStackTrace(); }
+			finally{
+				try {
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}
+		}
+	}
 }

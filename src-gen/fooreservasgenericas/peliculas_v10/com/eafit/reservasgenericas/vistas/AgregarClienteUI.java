@@ -7,7 +7,7 @@ fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminClie
 /*** added by dAgregarClienteUI
  */
 @SuppressWarnings("serial")
-public class AgregarClienteUI extends javax.swing.JFrame {
+public class AgregarClienteUI extends JFrame {
 	private JButton btnReservar;
 	private JLabel lblNombre;
 	private JLabel lblApellidos;
