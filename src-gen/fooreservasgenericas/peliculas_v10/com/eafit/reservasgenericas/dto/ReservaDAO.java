@@ -24,6 +24,16 @@ public class ReservaDAO {
 			String query =
 			"INSERT INTO reserva (fechaReserva, fechaUso, cantidad, costoTotal, numeroIDCliente, idProducto) values (?,?,?,?,?,?)";
 			ps = conn.prepareStatement(query);
+			java.sql.Date sqlFechaReserva = new
+			java.sql.Date(reserva.getFechaReserva().getTime());
+			ps.setDate(1, sqlFechaReserva);
+			java.sql.Date sqlFechaUso = new
+			java.sql.Date(reserva.getFechaUso().getTime());
+			ps.setDate(2, sqlFechaUso);
+			ps.setInt(3, reserva.getCantidad());
+			ps.setFloat(4, reserva.getCostoTotal());
+			ps.setInt(5, reserva.getCliente().getNumeroID());
+			ps.setInt(6, reserva.getProducto().getIdProducto());
 			ps.executeUpdate();
 		}
 		catch(Exception e) {

@@ -3,6 +3,7 @@ package fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.vistas;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.List;
+import java.util.Date;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.modelos.Cliente;
 import
@@ -11,6 +12,8 @@ import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminProductos;
 import
 fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminClientes;
+import
+fooreservasgenericas.peliculas_v10.com.eafit.reservasgenericas.gestion.AdminReservas;
 /*** added by dAgregarReservaUI
  */
 @SuppressWarnings("serial")
@@ -42,6 +45,7 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	private JTextField tfPrecio;
 	AdminProductos adminProductos = new AdminProductos();
 	AdminClientes adminClientes = new AdminClientes();
+	AdminReservas adminReservas = new AdminReservas();
 	List<Producto> productos;
 	Producto producto = new Producto();
 	Cliente cliente = new Cliente();
@@ -57,7 +61,8 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 		for(int i = 0;
 			i < productos.size();
 			i ++) {
-			cbxPeliculas.addItem(productos.get(i).getNombre());
+			cbxPeliculas.addItem(productos.get(i).getIdProducto() + ":" +
+				productos.get(i).getNombre());
 		}
 	}
 	private void initComponents() {
@@ -203,7 +208,9 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 	}
 	private void btnSeleccionarActionPerformed(ActionEvent evt) {
 		try {
-			producto = adminProductos.buscar(1);
+			int id =
+			Integer.valueOf(cbxPeliculas.getSelectedItem().toString().split(":")[0]);
+			producto = adminProductos.buscar(id);
 			tfDescripcion.setText(producto.getDescripcion());
 			tfCantidadDisponible.setText(String.valueOf(producto.getCantidadDisponible()));
 			tfPrecio.setText(String.valueOf(producto.getPrecio()));
@@ -213,5 +220,13 @@ public class AgregarReservaPeliculaGUI extends JFrame {
 		}
 	}
 	private void btnReservarActionPerformed(ActionEvent evt) {
+		Date fechaReserva = new Date(System.currentTimeMillis());
+		Date fechaUso = new Date(System.currentTimeMillis());
+		int cantidad = Integer.valueOf(tfCantidad.getText());
+		
+		float costoTotal = cantidad *producto.getPrecio();
+		tfPrecio.setText(String.valueOf(costoTotal));
+		adminReservas.agregar(fechaReserva, fechaUso, cantidad, costoTotal, cliente,
+			producto);
 	}
 }

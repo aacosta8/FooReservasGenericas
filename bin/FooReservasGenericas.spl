@@ -55,7 +55,7 @@ SPL FooReservasGenericas {
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config); 
 	}           
-                  
+                    
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
@@ -64,7 +64,7 @@ SPL FooReservasGenericas {
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
 			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
-			Conexion, Config
+			Conexion, Config  
 		};      
-	}    
+	}     
 }     
