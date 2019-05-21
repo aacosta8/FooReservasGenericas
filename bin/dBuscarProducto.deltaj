@@ -1,0 +1,39 @@
+delta dBuscarProducto {
+	modifies com.eafit.reservasgenericas.gestion.AdminProductos{
+		adds public Producto buscar(int idProducto) throws Exception {
+			return productoDAO.buscar(idProducto);
+		}
+	}
+	
+	modifies com.eafit.reservasgenericas.dto.ProductoDAO{
+		adds 	public Producto buscar(int idProducto) {
+			Producto producto = new Producto();
+			try {
+				conn = Conexion.getConexion();
+				String query =
+				"SELECT idProducto, nombre, descripcion, precio, cantidadDisponible, tipo FROM producto WHERE idProducto = " + idProducto;
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					producto.setIdProducto(rs.getInt(1));
+					producto.setNombre(rs.getString(2));
+					producto.setDescripcion(rs.getString(3));
+					producto.setPrecio(rs.getFloat(4));
+					producto.setCantidadDisponible(rs.getInt(5));
+					producto.setTipo(rs.getString(6));
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				try {
+					conn.close();
+				}
+				catch(Exception e) {
+				}
+			}
+			return producto;
+		}
+	}
+}

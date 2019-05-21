@@ -5,7 +5,7 @@ SPL FooReservasGenericas {
 		AdminReservas, AgregarReserva, ModificarReserva, EliminarReserva, ListarReservas, Reserva, ReservaDAO,
 		AdminProductos, AgregarProducto, ModificarProducto, EliminarProducto, ListarProductos, BuscarProducto, Producto, ProductoDAO,
 		AdminClientes, AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
-		IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
+		IndexPeliculas, IndexPeliculasReserva, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 		IndexVuelos, AgregarVueloUI, AgregarReservaVueloUI, 
 		Conexion, Config, ConfigVuelos
 	}   
@@ -15,7 +15,7 @@ SPL FooReservasGenericas {
 		dAdminReservas, dAgregarReserva, dModificarReserva, dEliminarReserva, dListarReservas, dReserva, dReservaDAO,
 		dAdminProductos, dAgregarProducto, dModificarProducto, dEliminarProducto, dListarProductos, dBuscarProducto, dProducto, dProductoDAO,
 		dAdminClientes, dAgregarCliente, dBuscarCliente, dCliente, dClienteDAO,
-		dIndexPeliculas, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
+		dIndexPeliculas, dIndexPeliculasReserva, dAgregarClienteUI, dAgregarPeliculaUI, dAgregarReservaUI,
 		dIndexVuelos, dAgregarVueloUI, dAgregarReservaVueloUI,
 		dConexion, dConfig, dConfigVuelos 	
 	}  
@@ -50,6 +50,7 @@ SPL FooReservasGenericas {
 		{dClienteDAO} when (ClienteDAO);
 		    
 		{dIndexPeliculas} when (IndexPeliculas);
+		{dIndexPeliculasReserva} when (IndexPeliculasReserva); 
 		{dAgregarClienteUI} when (AgregarClienteUI);
 		{dAgregarPeliculaUI} when (AgregarPeliculaUI); 
 		{dAgregarReservaUI} when (AgregarReservaUI); 
@@ -57,13 +58,12 @@ SPL FooReservasGenericas {
 		{dIndexVuelos} when (IndexVuelos);
 		{dAgregarVueloUI} when (AgregarVueloUI); 
 		{dAgregarReservaVueloUI} when (AgregarReservaVueloUI); 
-		
-		
+ 
 		{dConexion} when (Conexion); 
 		{dConfig} when (Config);
 		{dConfigVuelos} when (ConfigVuelos); 
 	}             
-                    
+                       
 	Products {     
 		// Put product definitions here.
 		peliculas_v10 =     
@@ -72,6 +72,15 @@ SPL FooReservasGenericas {
 			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
 			AgregarReserva, Reserva, ReservaDAO,
 			IndexPeliculas, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
+			Conexion, Config
+		};
+		
+		peliculas_v20 =     
+		{    
+			AgregarProducto, ModificarProducto, ListarProductos, EliminarProducto, BuscarProducto, Producto, ProductoDAO, 
+			AgregarCliente, BuscarCliente, Cliente, ClienteDAO,
+			AgregarReserva, Reserva, ReservaDAO,
+			IndexPeliculasReserva, AgregarClienteUI, AgregarPeliculaUI, AgregarReservaUI,
 			Conexion, Config
 		};  
 		 

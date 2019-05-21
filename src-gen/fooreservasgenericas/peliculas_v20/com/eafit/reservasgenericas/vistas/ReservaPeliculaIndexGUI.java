@@ -1,17 +1,15 @@
-package fooreservasgenericas.vuelos_v10.com.eafit.reservasgenericas.vistas;
+package fooreservasgenericas.peliculas_v20.com.eafit.reservasgenericas.vistas;
 
 import javax.swing.*;
 import java.awt.EventQueue;
 import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/*** added by dIndexVuelos* modified by dAgregarVueloUI* modified by
-dAgregarReservaVueloUI
+/*** added by dIndexPeliculasReserva* modified by dAgregarClienteUI* modified
+by dAgregarPeliculaUI* modified by dAgregarReservaUI
  */
 @SuppressWarnings("serial")
 public class ReservaPeliculaIndexGUI extends JFrame {
-	private JButton registrarPeliculas;
-	private JButton registrarClientes;
 	private JButton reservarPelicula;
 	public ReservaPeliculaIndexGUI() {
 		initComponents();
@@ -22,19 +20,7 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 		reservarPelicula = new JButton();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Inicio");
-		registrarClientes.setText("Registrar Clientes");
-		registrarClientes.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent evt) {
-					registrarClientesActionPerformed(evt);
-				}
-			});
-		registrarPeliculas.setText("Agregar Vuelo");
-		registrarPeliculas.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent evt) {
-					registrarPeliculasActionPerformed(evt);
-				}
-			});
-		reservarPelicula.setText("Reservar Asiento");
+		reservarPelicula.setText("Reservar Pelicula");
 		reservarPelicula.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent evt) {
 					reservarPeliculaActionPerformed(evt);
@@ -45,16 +31,10 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 		layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING,
 				layout.createSequentialGroup().addContainerGap(35,
 					Short.MAX_VALUE).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING,
-						false).addComponent(registrarClientes, GroupLayout.DEFAULT_SIZE, 129,
-						Short.MAX_VALUE).addComponent(registrarPeliculas,
-						GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE).addComponent(reservarPelicula,
-						GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE)).addGap(35, 35, 35)));
+						false).addComponent(reservarPelicula, GroupLayout.DEFAULT_SIZE,
+						GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)).addGap(35, 35, 35)));
 		layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(35,
-					35, 35).addComponent(registrarClientes).addGap(18, 18,
-					18).addComponent(registrarPeliculas).addGap(18, 18,
-					18).addComponent(reservarPelicula).addContainerGap(35,
+					35, 35).addComponent(reservarPelicula).addContainerGap(35,
 					Short.MAX_VALUE)));
 		pack();
 	}
@@ -90,13 +70,19 @@ public class ReservaPeliculaIndexGUI extends JFrame {
 				}
 			});
 	}
-	/*** added by dAgregarVueloUI
+	/*** added by dAgregarClienteUI
+	 */
+	private void registrarClientesActionPerformed(ActionEvent evt) {
+		AgregarClienteUI AgregarClienteUI = new AgregarClienteUI();
+		AgregarClienteUI.setVisible(true);
+	}
+	/*** added by dAgregarPeliculaUI
 	 */
 	private void registrarPeliculasActionPerformed(ActionEvent evt) {
 		AgregarPeliculaGUI agregarPeliculaGUI = new AgregarPeliculaGUI();
 		agregarPeliculaGUI.setVisible(true);
 	}
-	/*** added by dAgregarReservaVueloUI
+	/*** added by dAgregarReservaUI
 	 */
 	private void reservarPeliculaActionPerformed(java.awt.event.ActionEvent evt)
 	{
